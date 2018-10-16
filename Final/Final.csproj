@@ -43,8 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayPricing.cs" />
+    <Compile Include="GadgetLarge.cs" />
+    <Compile Include="GadgetMedium.cs" />
+    <Compile Include="GadgetSizeChoice.cs" />
+    <Compile Include="GadgetSmall.cs" />
+    <Compile Include="IWidget.cs" />
+    <Compile Include="OrderCart.cs" />
+    <Compile Include="OrderCheckOut.cs" />
+    <Compile Include="OrderForm.cs" />
+    <Compile Include="PowerSource.cs" />
+    <Compile Include="Pricing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WagIntro.cs" />
+    <Compile Include="Widget.cs" />
+    <Compile Include="WidgetLarge.cs" />
+    <Compile Include="WidgetMedium.cs" />
+    <Compile Include="WidgetSmall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
