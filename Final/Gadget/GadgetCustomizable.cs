@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace week1.FINAL
+namespace Gadget
 {
-    public class GadgetSmall
+    public abstract class GadgetCustomizable : Gadget
     {
-        private int _numOfWidgets  = 2;
-        private int _numOfSwitches = 1;
-        private int _numOfButtons  = 2;
-        private int _numOfLights   = 0;
-        private string _powerSource = "Battery";
+        /*
 
         public virtual int NumOfWidgets
         {
@@ -67,5 +65,9 @@ namespace week1.FINAL
                 return _powerSource;
             }
         }
+
+
+        */
+
     }
 }

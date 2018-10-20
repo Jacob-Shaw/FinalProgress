@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace week1.FINAL
+namespace Widget
 {
     /* (backup)
     public class WidgetMedium : WidgetSmall

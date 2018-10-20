@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Gadget;
 
 namespace week1.FINAL
 {
     public class DisplayPricing
     {
+       /// This class will display your current order and !!!!!!!!!!!!!!!!!!!Should add to cart afterwards
         public void DisplayCurrentOrder(string size, int numberOfUnits, string power)
         {
             Pricing myPrices = new Pricing();
@@ -15,27 +17,27 @@ namespace week1.FINAL
                 case "Small":
                     GadgetSmall mySmallGadget = new GadgetSmall();
 
-                    Console.WriteLine("Widget (cost per unit * unit-per-gadget-size * number of units purchased)");
-                    Console.WriteLine("  - Small Widget .... " + myPrices.SmallWidgetCost + " * " + mySmallGadget.NumOfWidgets + " * " + numberOfUnits + " = " 
-                        + (myPrices.SmallWidgetCost * mySmallGadget.NumOfWidgets * numberOfUnits).ToString("F2"));
-                    double mySmallWidgetCost = myPrices.SmallWidgetCost * mySmallGadget.NumOfWidgets * numberOfUnits;
+                    Console.WriteLine("Widget (cost per unit * unit-per-gadget-size * units purchased)");
+                    Console.WriteLine("  - Small Widget .... " + myPrices.SmallWidgetCost + " * " + mySmallGadget.NumberOfWidgets + " * " + numberOfUnits + " = " 
+                        + (myPrices.SmallWidgetCost * mySmallGadget.NumberOfWidgets * numberOfUnits).ToString("F2"));
+                    double mySmallWidgetCost = myPrices.SmallWidgetCost * mySmallGadget.NumberOfWidgets * numberOfUnits;
                     Console.WriteLine();
 
-                    Console.WriteLine("Gadget Components (cost per unit * number for Gadget * number of units purchased)");
-                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + mySmallGadget.NumOfSwitches + " * " + numberOfUnits + " = "
-                        + (myPrices.SwitchCostPerUnit * mySmallGadget.NumOfSwitches * numberOfUnits).ToString("F2"));
-                    double mySmallSwitchCost = (myPrices.SwitchCostPerUnit * mySmallGadget.NumOfSwitches * numberOfUnits);
+                    Console.WriteLine("Gadget Components (cost per unit * Gadgets * units purchased)");
+                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + mySmallGadget.NumberOfSwitches + " * " + numberOfUnits + " = "
+                        + (myPrices.SwitchCostPerUnit * mySmallGadget.NumberOfSwitches * numberOfUnits).ToString("F2"));
+                    double mySmallSwitchCost = (myPrices.SwitchCostPerUnit * mySmallGadget.NumberOfSwitches * numberOfUnits);
 
-                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + mySmallGadget.NumOfButtons + " * " + numberOfUnits + " = "
-                        + (myPrices.ButtonCostPerUnit * mySmallGadget.NumOfButtons * numberOfUnits).ToString("F2"));
-                    double mySmallButtonCost = (myPrices.ButtonCostPerUnit * mySmallGadget.NumOfButtons * numberOfUnits);
+                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + mySmallGadget.NumberOfButtons + " * " + numberOfUnits + " = "
+                        + (myPrices.ButtonCostPerUnit * mySmallGadget.NumberOfButtons * numberOfUnits).ToString("F2"));
+                    double mySmallButtonCost = (myPrices.ButtonCostPerUnit * mySmallGadget.NumberOfButtons * numberOfUnits);
 
-                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + mySmallGadget.NumOfLights + " * " + numberOfUnits + " = "
-                        + (myPrices.LightCostPerUnit * mySmallGadget.NumOfLights * numberOfUnits).ToString("F2"));
-                    double mySmallLightCost = (myPrices.LightCostPerUnit * mySmallGadget.NumOfLights * numberOfUnits);
+                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + " * " + numberOfUnits + " = "
+                        + (myPrices.LightCostPerUnit * numberOfUnits).ToString("F2"));
+                    double mySmallLightCost = (myPrices.LightCostPerUnit * numberOfUnits);
 
                     Console.WriteLine();
-                    Console.WriteLine("Power Supplies (cost per unit * number of units purchased)");
+                    Console.WriteLine("Power Supplies (cost per unit * units purchased)");
                     Console.WriteLine("  - Battery ......... " + myPrices.BatteryCostPerUnit + " * " + numberOfUnits + " = "
                         + myPrices.BatteryCostPerUnit * numberOfUnits);
                     double mySmallBatteryCost = (myPrices.BatteryCostPerUnit * numberOfUnits);
@@ -48,23 +50,23 @@ namespace week1.FINAL
                     GadgetMedium myMediumGadget = new GadgetMedium();
 
                     Console.WriteLine("Widget (cost per unit * unit-per-gadget-size * number of units purchased)");
-                    Console.WriteLine("  - Medium Widget ... " + myPrices.MediumWidgetCost + " * " + myMediumGadget.NumOfWidgets + " * " + numberOfUnits + " = "
-                        + (myPrices.MediumWidgetCost * myMediumGadget.NumOfWidgets * numberOfUnits).ToString("F2"));
-                    double myMediumWidgetCost = myPrices.MediumWidgetCost * myMediumGadget.NumOfWidgets * numberOfUnits;
+                    Console.WriteLine("  - Medium Widget ... " + myPrices.MediumWidgetCost + " * " + myMediumGadget.NumberOfWidgets + " * " + numberOfUnits + " = "
+                        + (myPrices.MediumWidgetCost * myMediumGadget.NumberOfWidgets * numberOfUnits).ToString("F2"));
+                    double myMediumWidgetCost = myPrices.MediumWidgetCost * myMediumGadget.NumberOfWidgets * numberOfUnits;
                     Console.WriteLine();
 
                     Console.WriteLine("Gadget Components (cost per unit * number for Gadget * number of units purchased)");
-                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + myMediumGadget.NumOfSwitches + " * " + numberOfUnits + " = "
-                        + (myPrices.SwitchCostPerUnit * myMediumGadget.NumOfSwitches * numberOfUnits).ToString("F2"));
-                    double myMediumSwitchCost = (myPrices.SwitchCostPerUnit * myMediumGadget.NumOfSwitches * numberOfUnits);
+                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + myMediumGadget.NumberOfSwitches + " * " + numberOfUnits + " = "
+                        + (myPrices.SwitchCostPerUnit * myMediumGadget.NumberOfSwitches * numberOfUnits).ToString("F2"));
+                    double myMediumSwitchCost = (myPrices.SwitchCostPerUnit * myMediumGadget.NumberOfSwitches * numberOfUnits);
 
-                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + myMediumGadget.NumOfButtons + " * " + numberOfUnits + " = "
-                        + (myPrices.ButtonCostPerUnit * myMediumGadget.NumOfButtons * numberOfUnits).ToString("F2"));
-                    double myMediumButtonCost = (myPrices.ButtonCostPerUnit * myMediumGadget.NumOfButtons * numberOfUnits);
+                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + myMediumGadget.NumberOfButtons + " * " + numberOfUnits + " = "
+                        + (myPrices.ButtonCostPerUnit * myMediumGadget.NumberOfButtons * numberOfUnits).ToString("F2"));
+                    double myMediumButtonCost = (myPrices.ButtonCostPerUnit * myMediumGadget.NumberOfButtons * numberOfUnits);
 
-                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + myMediumGadget.NumOfLights + " * " + numberOfUnits + " = "
-                        + (myPrices.LightCostPerUnit * myMediumGadget.NumOfLights * numberOfUnits).ToString("F2"));
-                    double myMediumLightCost = (myPrices.LightCostPerUnit * myMediumGadget.NumOfLights * numberOfUnits);
+                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + myMediumGadget.NumberOfLights + " * " + numberOfUnits + " = "
+                        + (myPrices.LightCostPerUnit * myMediumGadget.NumberOfLights * numberOfUnits).ToString("F2"));
+                    double myMediumLightCost = (myPrices.LightCostPerUnit * myMediumGadget.NumberOfLights * numberOfUnits);
 
                     if(power == "B")
                     {
@@ -95,23 +97,23 @@ namespace week1.FINAL
                     GadgetLarge myLargeGadget = new GadgetLarge();
 
                     Console.WriteLine("Widget (cost per unit * unit-per-gadget-size * number of units purchased)");
-                    Console.WriteLine("  - Large Widget .... " + myPrices.LargeWidgetCost + " * " + myLargeGadget.NumOfWidgets + " * " + numberOfUnits + " = "
-                        + (myPrices.LargeWidgetCost * myLargeGadget.NumOfWidgets * numberOfUnits).ToString("F2"));
-                    double myLargeWidgetCost = myPrices.LargeWidgetCost * myLargeGadget.NumOfWidgets * numberOfUnits;
+                    Console.WriteLine("  - Large Widget .... " + myPrices.LargeWidgetCost + " * " + myLargeGadget.NumberOfWidgets + " * " + numberOfUnits + " = "
+                        + (myPrices.LargeWidgetCost * myLargeGadget.NumberOfWidgets * numberOfUnits).ToString("F2"));
+                    double myLargeWidgetCost = myPrices.LargeWidgetCost * myLargeGadget.NumberOfWidgets * numberOfUnits;
                     Console.WriteLine();
 
                     Console.WriteLine("Gadget Components (cost per unit * number for Gadget * number of units purchased)");
-                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + myLargeGadget.NumOfSwitches + " * " + numberOfUnits + " = "
-                        + (myPrices.SwitchCostPerUnit * myLargeGadget.NumOfSwitches * numberOfUnits).ToString("F2"));
-                    double myLargeSwitchCost = (myPrices.SwitchCostPerUnit * myLargeGadget.NumOfSwitches * numberOfUnits);
+                    Console.WriteLine("  - Switch .......... " + myPrices.SwitchCostPerUnit + " * " + myLargeGadget.NumberOfSwitches + " * " + numberOfUnits + " = "
+                        + (myPrices.SwitchCostPerUnit * myLargeGadget.NumberOfSwitches * numberOfUnits).ToString("F2"));
+                    double myLargeSwitchCost = (myPrices.SwitchCostPerUnit * myLargeGadget.NumberOfSwitches * numberOfUnits);
 
-                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + myLargeGadget.NumOfButtons + " * " + numberOfUnits + " = "
-                        + (myPrices.ButtonCostPerUnit * myLargeGadget.NumOfButtons * numberOfUnits).ToString("F2"));
-                    double myLargeButtonCost = (myPrices.ButtonCostPerUnit * myLargeGadget.NumOfButtons * numberOfUnits);
+                    Console.WriteLine("  - Button .......... " + myPrices.ButtonCostPerUnit + " * " + myLargeGadget.NumberOfButtons + " * " + numberOfUnits + " = "
+                        + (myPrices.ButtonCostPerUnit * myLargeGadget.NumberOfButtons * numberOfUnits).ToString("F2"));
+                    double myLargeButtonCost = (myPrices.ButtonCostPerUnit * myLargeGadget.NumberOfButtons * numberOfUnits);
 
-                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + myLargeGadget.NumOfLights + " * " + numberOfUnits + " = "
-                        + (myPrices.LightCostPerUnit * myLargeGadget.NumOfLights * numberOfUnits).ToString("F2"));
-                    double myLargeLightCost = (myPrices.LightCostPerUnit * myLargeGadget.NumOfLights * numberOfUnits);
+                    Console.WriteLine("  - Light ........... " + myPrices.LightCostPerUnit + " * " + myLargeGadget.NumberOfLights + " * " + numberOfUnits + " = "
+                        + (myPrices.LightCostPerUnit * myLargeGadget.NumberOfLights * numberOfUnits).ToString("F2"));
+                    double myLargeLightCost = (myPrices.LightCostPerUnit * myLargeGadget.NumberOfLights * numberOfUnits);
 
                     if (power == "G")
                     {

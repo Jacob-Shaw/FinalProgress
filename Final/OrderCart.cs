@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
-//using week1.Fundamentals;
+
 
 namespace week1.FINAL
 {
     public class OrderCart
     {
+        /// <summary>
+        /// This class is not active!!!!!!!!!!!!!not used!!!!!!!!!!!!!!!!!! Comment out the whole class (gut it) make it the order form/cart
+        /// </summary>
+        /// <param name="numUserGadgetsEntered"></param>
+        /// <param name="powerSelection"></param>
+
         //Variables include # of Gadgets, Power Source, and Finish Option
         public void MyOrderCart(int numUserGadgetsEntered, string powerSelection)
         {
@@ -28,9 +34,27 @@ namespace week1.FINAL
                     break;
             }
 
+            Console.WriteLine("Hey how are you");
+
             Console.WriteLine("You ordered " + numUserGadgetsEntered + " gadget(s), having power source of " + powerSelectionString);
             Console.WriteLine("Order summary is as follows:");
             Console.WriteLine("\n\n");
+          
+            
+            
+            
+            
+            
+            //// Below was never touched by me
+            ///
+
+
+
+
+
+
+
+
 
             /*
             List<Widget> myWidgets = new List<Widget>();

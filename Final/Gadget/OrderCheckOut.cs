@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Gadget;
+using Widget;
 
-namespace week1.FINAL
+namespace Gadget
 {
     public class OrderCheckOut
     {
+        ///  DisplayOrder used as a method call 
+        ///This class will clear the screen and based on the gadget "sizeSelected" and "powerSelected" 
+        ///display the contents 
+
+
         public void DisplayOrder(string sizeSelected, string powerSelected)
         {
             Console.Clear();
@@ -20,14 +27,14 @@ namespace week1.FINAL
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Small Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + mySmallGadget.NumOfWidgets);
-                    Console.WriteLine("(each Widget has " + mySmallWidget.NumOfGears + " gears, "
+                    Console.WriteLine("Number of Widgets.... " + mySmallGadget.NumberOfWidgets);
+                    Console.WriteLine("             (each Widget has " + mySmallWidget.NumOfGears + " gears, "
                                                                        + mySmallWidget.NumOfSprings + " springs, and "
                                                                        + mySmallWidget.NumOfLevers + " lever)");
                     Console.WriteLine();
-                    Console.WriteLine("Number of Switches... " + mySmallGadget.NumOfSwitches);
-                    Console.WriteLine("Number of Buttons.... " + mySmallGadget.NumOfButtons);
-                    Console.WriteLine("Number of Lights..... " + mySmallGadget.NumOfLights);
+                    Console.WriteLine("Number of Switches... " + mySmallGadget.NumberOfSwitches);
+                    Console.WriteLine("Number of Buttons.... " + mySmallGadget.NumberOfButtons);
+                    //Console.WriteLine("Number of Lights..... " + mySmallGadget.NumberOfLights);
                     Console.WriteLine("Power Source......... " + mySmallGadget.PowerSource);
                     break;
 
@@ -39,16 +46,16 @@ namespace week1.FINAL
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("------------------  Medium Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + myMediumGadget.NumOfWidgets);
-                    Console.WriteLine("(each Widget has " + myMediumWidget.NumOfGears + " gears, "
+                    Console.WriteLine("Number of Widgets.... " + myMediumGadget.NumberOfWidgets);
+                    Console.WriteLine("             (each Widget has " + myMediumWidget.NumOfGears + " gears, "
                                                                        + myMediumWidget.NumOfSprings + " springs, and "
                                                                        + myMediumWidget.NumOfLevers + " levers)");
                     Console.WriteLine();
-                    Console.WriteLine("Number of Switches... " + myMediumGadget.NumOfSwitches);
-                    Console.WriteLine("Number of Buttons.... " + myMediumGadget.NumOfButtons);
-                    Console.WriteLine("Number of Lights..... " + myMediumGadget.NumOfLights);
+                    Console.WriteLine("Number of Switches... " + myMediumGadget.NumberOfSwitches);
+                    Console.WriteLine("Number of Buttons.... " + myMediumGadget.NumberOfButtons);
+                    Console.WriteLine("Number of Lights..... " + myMediumGadget.NumberOfLights);
                     //Console.WriteLine("Power Source......... " + myMediumGadget.PowerSource); //(backup)
-                    Console.WriteLine("Power Source......... " + myMediumGadget.ReturnPowerSource(powerSelected));
+                    Console.WriteLine("Power Source......... " + myMediumGadget.PowerSource);
                     break;
 
                 case "Large":
@@ -59,16 +66,15 @@ namespace week1.FINAL
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Large Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + myLargeGadget.NumOfWidgets);
-                    Console.WriteLine();
-                    Console.WriteLine("(each Widget has " + myLargeWidget.NumOfGears + " gears, "
+                    Console.WriteLine("Number of Widgets.... " + myLargeGadget.NumberOfWidgets);
+                    Console.WriteLine("             (each Widget has " + myLargeWidget.NumOfGears + " gears, "
                                                                        + myLargeWidget.NumOfSprings + " springs, and "
                                                                        + myLargeWidget.NumOfLevers + " levers)");
-                    Console.WriteLine("Number of Switches... " + myLargeGadget.NumOfSwitches);
-                    Console.WriteLine("Number of Buttons.... " + myLargeGadget.NumOfButtons);
-                    Console.WriteLine("Number of Lights..... " + myLargeGadget.NumOfLights);
+                    Console.WriteLine("Number of Switches... " + myLargeGadget.NumberOfSwitches);
+                    Console.WriteLine("Number of Buttons.... " + myLargeGadget.NumberOfButtons);
+                    Console.WriteLine("Number of Lights..... " + myLargeGadget.NumberOfLights);
                     //Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource); //(backup)
-                    Console.WriteLine("Power Source......... " + myLargeGadget.ReturnPowerSource(powerSelected));
+                    Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource);
                     break;
             }
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace week1.FINAL
+namespace Widget
 {
     //note that medium and large should implement Widget and not WidgetSmall.cs
     public class WidgetSmall : Widget

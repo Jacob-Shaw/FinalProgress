@@ -6,6 +6,10 @@ namespace week1.FINAL
 {
     public class Pricing
     {
+        /// <summary>
+        /// Destroy this class and place fields and properties into seperate classes, Gadget, Power supply, widget!!!!!!!!!!!!!!!
+        /// </summary>
+
         //Gadget Components
         private double _switchCostPerUnit    = 10.99;
         private double _buttonCostPerUnit    = 20.87;

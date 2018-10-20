@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace week1.FINAL
+namespace Gadget
 {
     class PowerSource
     {
         public string UserPowerSourceMedium()
         {
+            /*
+            /// This could be part of the order form!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             Console.WriteLine();
             Console.WriteLine("Please select power source for Medium Gadget(s):  (B)attery or (S)olar");
             Console.WriteLine();
 
+
+
+            ///This should be the implementations, methods called
             string userPowerSourceString = Console.ReadLine().ToUpper();
 
             while ((userPowerSourceString != "B") && (userPowerSourceString != "S"))
@@ -38,6 +43,11 @@ namespace week1.FINAL
             }
 
             return userPowerSourceString;
+
+            */
+
+
+            return "baloney";
         }
     }
 }

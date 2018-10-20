@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace week1.FINAL
+namespace Gadget
 {
     public class GadgetSizeChoice
     {
+
+        /// <summary>
+        /// This class simply allows the user to choose the size of the gadget//May refactor---Put into gadget orderform
+        /// </summary>
+        /// <returns></returns>
         public string ChooseGadgetSize()
         {
             Console.WriteLine();

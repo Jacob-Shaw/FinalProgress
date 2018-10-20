@@ -44,26 +44,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisplayPricing.cs" />
-    <Compile Include="GadgetLarge.cs" />
-    <Compile Include="GadgetMedium.cs" />
-    <Compile Include="GadgetSizeChoice.cs" />
-    <Compile Include="GadgetSmall.cs" />
-    <Compile Include="IWidget.cs" />
+    <Compile Include="Gadget\Gadget.cs" />
+    <Compile Include="Gadget\GadgetCustomizable.cs" />
+    <Compile Include="Gadget\GadgetLarge.cs" />
+    <Compile Include="Gadget\GadgetMedium.cs" />
+    <Compile Include="Gadget\GadgetSizeChoice.cs" />
+    <Compile Include="Gadget\GadgetSmall.cs" />
+    <Compile Include="Gadget\GadgetWithLights.cs" />
+    <Compile Include="Gadget\IGadget.cs" />
+    <Compile Include="WAG\IWagProduct.cs" />
+    <Compile Include="WAG\StaticOrderForm.cs" />
+    <Compile Include="WAG\WagProductCatalog.cs" />
+    <Compile Include="Widget\IWidget.cs" />
     <Compile Include="OrderCart.cs" />
-    <Compile Include="OrderCheckOut.cs" />
-    <Compile Include="OrderForm.cs" />
-    <Compile Include="PowerSource.cs" />
+    <Compile Include="Gadget\OrderCheckOut.cs" />
+    <Compile Include="GadgetOrderForm.cs" />
+    <Compile Include="Gadget\PowerSource.cs" />
     <Compile Include="Pricing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WagIntro.cs" />
-    <Compile Include="Widget.cs" />
-    <Compile Include="WidgetLarge.cs" />
-    <Compile Include="WidgetMedium.cs" />
-    <Compile Include="WidgetSmall.cs" />
+    <Compile Include="WAG\CompanyIntro.cs" />
+    <Compile Include="WAG\WagCustomerOrderForm.cs" />
+    <Compile Include="Widget\Widget.cs" />
+    <Compile Include="Widget\WidgetLarge.cs" />
+    <Compile Include="Widget\WidgetMedium.cs" />
+    <Compile Include="Widget\WidgetSmall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

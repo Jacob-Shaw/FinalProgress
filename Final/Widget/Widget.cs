@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WAG;
 
-namespace week1.FINAL
+namespace Widget
 {
-    public abstract class Widget : IWidget
+    public abstract class Widget : IWidget, IWagProduct
     {
         /* (backup) don't want to define values here?
         public int _numOfGears = 2;
