@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gadget
 {
-    public abstract class GadgetWithLights : Gadget
+    public abstract class GadgetWithLights : GadgetAbstract
     {
         public abstract int NumberOfLights { get; set; }
     }

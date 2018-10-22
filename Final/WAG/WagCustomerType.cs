@@ -10,14 +10,14 @@ namespace WAG
     /// This IS the customer order form
     /// </summary>
 
-    public class WagCustomerOrderForm
+    public class WagCustomerType
     {
-        private string _orderType = "";
-        public static List<IWagProduct> MEcustomerOrder;
+        public static string CustomerType = ""; 
+        public static List<IWagProduct> CustomerOrderForm;
         
-        public WagCustomerOrderForm()
+        public WagCustomerType()
         {
-            _orderType = GetOrderType();
+            CustomerType = GetOrderType(); 
         }
 
             public string GetOrderType()

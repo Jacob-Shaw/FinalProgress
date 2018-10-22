@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gadget
 {
-    public abstract class GadgetCustomizable : Gadget
+    public abstract class GadgetCustomizable : GadgetAbstract
     {
         /*
 

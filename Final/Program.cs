@@ -24,28 +24,37 @@ namespace FINAL
             CompanyIntro companyIntro = new CompanyIntro();
             companyIntro.Intro();
 
-            //// 2. Create the customer order form, Get the user type
-            WagCustomerOrderForm newCustomerOrder = new WagCustomerOrderForm();
 
+            ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            ///                      Test Space
+            ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+          
+            
+            //// 2. Get the user type
+            WagCustomerType newCustomerOrder = new WagCustomerType();
+            
+            //// 3. Present the products for something to add to cart
+            WagProductCatalog ProductMenu = new WagProductCatalog();
 
             
 
-            //// 3. Present the products
-            WagProductCatalog ProductMenu = new WagProductCatalog();
 
 
-            TheOrderForm.customerOrder.Add(Gadget);   ///Hallelujah!
-            WagCustomerOrderForm.MEcustomerOrder.Add(Gadget);
 
 
-            //string orderType = userOrderType.GetOrderType();
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Add Item menu if possible
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Generalize orderform following
-            //// Get the order form details based on Order Type choice Retail or Manufacturer
+
+
+
+
+            //TheOrderForm.customerOrder.Add(Gadget);   ///Hallelujah!
+            //WagCustomerOrderForm.MEcustomerOrder.Add(Gadget);!*!*!*   !*!*!*   !*!*!   *!*!*!*!*   !*!*!*!*   !*@
+
+            
+            
             /// Create the Universal Orderform, place it here, remove Gadget orderforms
 
-
-
+            
             /// Present the user with the Company Item list Menu for sale(only gadgets now, Small, Medium, Large
             /// Place the Item List here
             /// user chooses item
@@ -57,7 +66,7 @@ namespace FINAL
             //myOrder.UserOrderForm(orderType);
 
             ///Selections from the Gadget Order Form  go to the Universal Order Form
-            
+
             ///Once the order of a gadget is complete and added to the cart:
             ///Prompt the user to add anything else to order.
             ///***At any time the user should be able to cancel order, prompt "are you sure" which returns to Welcome screen
@@ -66,8 +75,8 @@ namespace FINAL
             ///***If the user would like to continue to order, return to Company Item menu
             ///         continue to add more items
             ///***User should be able to append what they have ordered
-            
-            
+
+
             ///////////Currently working here 10-18---working out flow in english!!!!!!!!!!!!!!!!!!!!!!!***********
 
             /*  
@@ -79,6 +88,12 @@ namespace FINAL
             myPriceDisplay.DisplayCurrentOrder(userGadgetSizeEntered, numUserGadgetsEntered, powerSelection);
           
             */
+
+            
+           
+
+            
+            
             
             
 
@@ -105,7 +120,23 @@ namespace FINAL
                 //Final();
             }
 
-            
+            /*
+             * 
+             * var NameIT = "GadgetOrderForm";
+            var LoadIT = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
+                          from type in assembly.GetTypes()
+                          where type.Name == NameIT && type.GetMethods().Any(m => m.Name == "RetailOrderForm")
+                          select type).FirstOrDefault();
+
+            if (LoadIT == null) throw new InvalidOperationException("Valid type not found.");
+
+            object newType = Activator.CreateInstance(LoadIT);
+
+
+
+
+            */
+
         }
     }
 }

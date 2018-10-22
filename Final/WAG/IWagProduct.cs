@@ -8,6 +8,9 @@ namespace WAG
 {
     public interface IWagProduct
     {
-        ///Using this to add products to a List<IWagProduct>
+        ///This is also necessary to add products to a List<IWagProduct>
+        ///
+
+
     }
 }

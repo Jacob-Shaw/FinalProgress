@@ -9,7 +9,7 @@ namespace Gadget
     /// 
     /// </summary>
 
-    public class GadgetSmall : Gadget
+    public class GadgetSmall : GadgetAbstract
     {
         /*
         private int _numOfWidgets = 2;

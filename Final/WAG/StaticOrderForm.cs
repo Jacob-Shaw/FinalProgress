@@ -8,8 +8,12 @@ namespace WAG
 {
     public static class TheOrderForm
     {
+        //backup, not using
 
-        public static List<IWagProduct> customerOrder;
+
+        //public static List<IWagProduct> customerOrder;
         
+
+        //yep
     }
 }

@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Gadget
 {
-    public class Gadget
+    public class TestClass
     {
 
-        public Gadget() {
-            Console.WriteLine("Howdy Gadget");
+
+        public TestClass()
+        {
+            Console.WriteLine("It removes spaces");
         }
 
 
+        
     }
 }
