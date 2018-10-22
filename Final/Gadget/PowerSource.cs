@@ -6,19 +6,23 @@ namespace Gadget
 {
     class PowerSource
     {
+        /// <summary>
+        /// This class asks the user to select the power source type and 
+        /// returns B or S for Medium/    G or S for Large
+        /// </summary>
+        /// <returns></returns>
+
+
+
         public string UserPowerSourceMedium()
         {
-            /*
-            /// This could be part of the order form!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //Prompt user for powersource type
             Console.WriteLine();
             Console.WriteLine("Please select power source for Medium Gadget(s):  (B)attery or (S)olar");
             Console.WriteLine();
-
-
-
-            ///This should be the implementations, methods called
+            
             string userPowerSourceString = Console.ReadLine().ToUpper();
-
+            
             while ((userPowerSourceString != "B") && (userPowerSourceString != "S"))
             {
                 Console.WriteLine("You must choose (B) or (S)");
@@ -28,8 +32,13 @@ namespace Gadget
             return userPowerSourceString;
         }
 
+
+
+
+
         public string UserPowerSourceLarge()
         {
+            //Prompt user for powersource type
             Console.WriteLine();
             Console.WriteLine("Please select power source for Large Gadget(s):  (G)enerator or (S)olar");
             Console.WriteLine();
@@ -43,11 +52,7 @@ namespace Gadget
             }
 
             return userPowerSourceString;
-
-            */
-
-
-            return "baloney";
         }
+           
     }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 using System.Text;
 
 
-namespace week1.FINAL
+namespace WAG
 {
     public class OrderCart
     {
@@ -39,46 +39,6 @@ namespace week1.FINAL
             Console.WriteLine("Order summary is as follows:");
             Console.WriteLine("\n\n");
           
-            
-            
-            
-            
-            
-            //// Below was never touched by me
-            ///
-
-
-
-
-
-
-
-
-
-            /*
-            List<Widget> myWidgets = new List<Widget>();
-            myWidgets.Add(new WidgetSmall());
-            myWidgets.Add(new WidgetMedium());
-
-            foreach (Widget myStuff in myWidgets)
-            {
-                //Console.WriteLine(dinosaur);
-                Console.WriteLine("My Order = " + myStuff);
-            }
-            */
-
-            /*
-            List<Dinosaur> myDinos = new List<Dinosaur>();
-            myDinos.Add(new Dinosaur() { Size = 50, Teeth = "Serrated", Skin = true });
-            myDinos.Add(new Pterodactyl() { Size = 25, Teeth = "Sharp" });
-            myDinos.Add(new Dinosaur.Raptor() { Size = 10, Teeth = "Serrated", Skin = false });
-
-            foreach (Dinosaur dinosaur in myDinos)
-            {
-                //Console.WriteLine(dinosaur);
-                Console.WriteLine(dinosaur.Size);
-            } 
-            */
         }
         
     }

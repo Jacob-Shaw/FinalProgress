@@ -5,8 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using WAG;
 
-namespace Gadget
+namespace funkyfunky
 {
+
+
+
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     Destroy this, NOT IN USE
+
+
+
+
+
     public class GadgetTest : IWagProduct
     {
 

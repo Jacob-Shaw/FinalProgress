@@ -201,6 +201,18 @@ namespace WAG
                     if (ItemWeAreTryingToCreate == null) throw new InvalidOperationException("Valid type not found.");
 
                     object newType = Activator.CreateInstance(ItemWeAreTryingToCreate);
+
+                    ///Now it is special order form time!
+                    ///In the constructor for the special order forms:
+                    ///Display the info, collect choices, add to masterorderform
+                    ///do retail first
+                    ///
+                    /// Program returns to this point after ordering or not ordering Gadgets!!!!!
+                    /// 
+
+                    Console.Clear();
+                    PresentSelectionMenu();
+
                     
                 }
                 catch (InvalidOperationException)

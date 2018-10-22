@@ -7,7 +7,7 @@ namespace week1.FINAL
     public class Pricing
     {
         /// <summary>
-        /// Destroy this class and place fields and properties into seperate classes, Gadget, Power supply, widget!!!!!!!!!!!!!!!
+        /// This class is used by displaypricing, but maybe not important
         /// </summary>
 
         //Gadget Components

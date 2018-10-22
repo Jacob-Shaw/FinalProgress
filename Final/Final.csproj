@@ -53,13 +53,11 @@
     <Compile Include="Gadget\GadgetSmall.cs" />
     <Compile Include="Gadget\GadgetWithLights.cs" />
     <Compile Include="Gadget\IGadget.cs" />
-    <Compile Include="Gadget\TestClass.cs" />
     <Compile Include="WAG\IWagProduct.cs" />
-    <Compile Include="WAG\StaticOrderForm.cs" />
     <Compile Include="WAG\WagProductCatalog.cs" />
     <Compile Include="Widget\IWidget.cs" />
     <Compile Include="OrderCart.cs" />
-    <Compile Include="Gadget\OrderCheckOut.cs" />
+    <Compile Include="Gadget\GadgetOrderFormSubmission.cs" />
     <Compile Include="Gadget\GadgetOrderForm.cs" />
     <Compile Include="Gadget\PowerSource.cs" />
     <Compile Include="Pricing.cs" />

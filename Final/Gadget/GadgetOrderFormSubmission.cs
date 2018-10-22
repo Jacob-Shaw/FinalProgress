@@ -6,14 +6,14 @@ using Widget;
 
 namespace Gadget
 {
-    public class OrderCheckOut
+    public class CompleteGadgetOrderForm
     {
-        ///  DisplayOrder used as a method call 
+        ///  
         ///This class will clear the screen and based on the gadget "sizeSelected" and "powerSelected" 
-        ///display the contents 
+        ///display the contents of the current item to add to the Masterorderform
 
 
-        public void DisplayOrder(string sizeSelected, string powerSelected)
+        public void DisplayOrder(int gadgetsOrdered, string sizeSelected, string powerSelected)
         {
             Console.Clear();
 
@@ -36,6 +36,25 @@ namespace Gadget
                     Console.WriteLine("Number of Buttons.... " + mySmallGadget.NumberOfButtons);
                     //Console.WriteLine("Number of Lights..... " + mySmallGadget.NumberOfLights);
                     Console.WriteLine("Power Source......... " + mySmallGadget.PowerSource);
+
+
+                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                    //My addition to this
+
+                    //display the number of gadgets ordered for this addition to the masterorderform 
+                    //display the cost of this addition
+                    Console.WriteLine();
+                    Console.WriteLine("Number of Small Gadgets ordering = " + gadgetsOrdered);
+                    Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
+
+             ///////////////////ask the user to confirm!!!!!!!!!!!!!
+                    
+             ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
+
+
+
+
+
                     break;
 
                 case "Medium":
@@ -56,7 +75,29 @@ namespace Gadget
                     Console.WriteLine("Number of Lights..... " + myMediumGadget.NumberOfLights);
                     //Console.WriteLine("Power Source......... " + myMediumGadget.PowerSource); //(backup)
                     Console.WriteLine("Power Source......... " + myMediumGadget.PowerSource);
+             
+
+
+
+                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                    //My addition to this
+
+                    //display the number of gadgets ordered for this addition to the masterorderform 
+                    //display the cost of this addition
+                    Console.WriteLine();
+                    Console.WriteLine("Number of Small Gadgets ordering = " + gadgetsOrdered);
+                    Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
+
+            ///////////////////ask the user to confirm!!!!!!!!!!!!!
+
+             ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
+
+
+
                     break;
+
+
+
 
                 case "Large":
                     Console.WriteLine();
@@ -75,6 +116,26 @@ namespace Gadget
                     Console.WriteLine("Number of Lights..... " + myLargeGadget.NumberOfLights);
                     //Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource); //(backup)
                     Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource);
+
+
+
+                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                    //My addition to this
+
+                    //display the number of gadgets ordered for this addition to the masterorderform 
+                    //display the cost of this addition
+                    Console.WriteLine();
+                    Console.WriteLine("Number of Small Gadgets ordering = " + gadgetsOrdered);
+                    Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
+
+             ///////////////////ask the user to confirm!!!!!!!!!!!!!
+
+             ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
+
+
+
+
+
                     break;
             }
         }
