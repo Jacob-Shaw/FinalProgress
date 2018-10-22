@@ -11,8 +11,7 @@ namespace week1.FINAL
         /// <summary>
         /// This class is not active!!!!!!!!!!!!!not used!!!!!!!!!!!!!!!!!! Comment out the whole class (gut it) make it the order form/cart
         /// </summary>
-        /// <param name="numUserGadgetsEntered"></param>
-        /// <param name="powerSelection"></param>
+        
 
         //Variables include # of Gadgets, Power Source, and Finish Option
         public void MyOrderCart(int numUserGadgetsEntered, string powerSelection)

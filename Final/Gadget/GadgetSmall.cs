@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WAG;
 
 namespace Gadget
 {
@@ -9,7 +10,7 @@ namespace Gadget
     /// 
     /// </summary>
 
-    public class GadgetSmall : GadgetAbstract
+    public class GadgetSmall : GadgetAbstract, IWagProduct
     {
         /*
         private int _numOfWidgets = 2;

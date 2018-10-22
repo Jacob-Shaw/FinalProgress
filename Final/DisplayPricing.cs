@@ -7,7 +7,12 @@ namespace week1.FINAL
 {
     public class DisplayPricing
     {
-       /// This class will display your current order and !!!!!!!!!!!!!!!!!!!Should add to cart afterwards
+        ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        ////// This class will display your current order and !!!!!!!!!!!!!!!!!!!Should add to cart afterwards
+        ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
         public void DisplayCurrentOrder(string size, int numberOfUnits, string power)
         {
             Pricing myPrices = new Pricing();

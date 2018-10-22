@@ -77,11 +77,11 @@ namespace Gadget
         {
             Console.WriteLine("You have reached the Gadget order form constructor");
 
-            if (WagCustomerType.CustomerType == "R")
+            if (WagCustomerTypeAndOrder.CustomerType == "R")
             {
                 RetailOrderForm();
             }
-            else if (WagCustomerType.CustomerType == "M")
+            else if (WagCustomerTypeAndOrder.CustomerType == "M")
             {
                 ManufacturerOrderForm();
             }

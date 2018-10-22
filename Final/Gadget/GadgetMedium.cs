@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WAG;
 
 namespace Gadget
 {
@@ -10,7 +11,7 @@ namespace Gadget
     /// </summary>
 
 
-    public class GadgetMedium : GadgetWithLights
+    public class GadgetMedium : GadgetWithLights, IWagProduct
     {
 
         public override string Name { get { return "Medium Gadget"; } }
