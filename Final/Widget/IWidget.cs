@@ -4,15 +4,20 @@ using System.Text;
 
 namespace Widget
 {
-
     /// <summary>
-    /// This class needs to have the basics done to it//wrong setup
+    /// 
+    /// This interface basically says what a Widget should be able to "do".
+    /// 
+    /// An Interface:
+    /// 1. Creates a contract on what methods a Widget must have.
+    /// 2. By creating the contract can help the IDE to inform the user what methods are 
+    ///         needed in the creation of a new Widget.
+    /// 3. Can be used to create a body of methods for creational design pattterns to build from.
+    /// 
     /// </summary>
-    //Interface represents the RULES/CONTRACT
     public interface IWidget
     {
-        void DisplaySmallWidgetComponents();
-        void DisplayMediumWidgetComponents();
-        void DisplayLargeWidgetComponents();
+        void DisplayComponents();
+        decimal GetPrice();
     }
 }

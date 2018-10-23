@@ -1,57 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FINAL;
 
 namespace Widget
 {
-    //note that medium and large should implement Widget and not WidgetSmall.cs
-    public class WidgetSmall : Widget
+    public class WidgetSmall : WidgetAbstract
     {
-        /* (backup) value n/a to be set here?
-        private new int _numOfGears;
-        private new int _numOfSprings;
-        private new int _numOfLevers;
-        */
-
-        public WidgetSmall()
-        {
-            //Console.WriteLine("WidgetSmall default constructor");
-        }
-
-        public virtual int NumOfGears
-        {
-            set
-            {
-                this._numOfGearsSmall = value;
-            }
-            get
-            {
-                return _numOfGearsSmall;
-            }
-        }
-
-        public virtual int NumOfSprings
-        {
-            set
-            {
-                this._numOfSpringsSmall = value;
-            }
-            get
-            {
-                return _numOfSpringsSmall;
-            }
-        }
-
-        public virtual int NumOfLevers
-        {
-            set
-            {
-                this._numOfLeversSmall = value;
-            }
-            get
-            {
-                return _numOfLeversSmall;
-            }
-        }
+        public override int NumOfGears { get; set; } = 2;
+        public override int NumOfSprings { get; set; } = 3;
+        public override int NumOfLevers { get; set; } = 1;
     }
 }

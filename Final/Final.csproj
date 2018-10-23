@@ -65,7 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WAG\CompanyIntro.cs" />
     <Compile Include="WAG\WagCustomerTypeAndOrder.cs" />
-    <Compile Include="Widget\Widget.cs" />
+    <Compile Include="Widget\WidgetAbstract.cs" />
     <Compile Include="Widget\WidgetLarge.cs" />
     <Compile Include="Widget\WidgetMedium.cs" />
     <Compile Include="Widget\WidgetSmall.cs" />

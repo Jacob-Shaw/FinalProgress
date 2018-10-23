@@ -22,6 +22,7 @@ namespace Gadget
     interface IGadget
     {
         void DisplayName();
+        int GetNumberOfWidgetsTotal();
         void DisplayComponents();
         void DisplayPriceDollars();
     }

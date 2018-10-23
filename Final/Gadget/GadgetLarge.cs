@@ -9,12 +9,13 @@ namespace Gadget
     {
         public override string Name { get { return "Large Gadget"; } }
 
-        public override int NumberOfWidgets { get; set; } = 12;
+        public override int NumberOfSmallWidgets { get; set; } = 12;
+        public override int NumberOfMediumWidgets { get; set; } = 12;
+        public override int NumberOfLargeWidgets { get; set; } = 12;
         public override int NumberOfSwitches { get; set; } = 2;
         public override int NumberOfButtons { get; set; } = 3;
         public override int NumberOfLights { get; set; } = 4;
-        public override decimal Price { get; set; } = 50m;
-
+        
 
         public override string PowerSource { get; set; }
 
@@ -45,9 +46,13 @@ namespace Gadget
             {
                 this.PowerSource = "Generator";
             }
-            else
+            else if (powerSource == "S")
             {
                 this.PowerSource = "Solar";
+            }
+            else
+            {
+                this.PowerSource = "Unknown";
             }
         }
     }

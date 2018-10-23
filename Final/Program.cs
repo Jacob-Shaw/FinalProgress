@@ -1,12 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using week1.FINAL;
-using FINAL;
-using WAG;
+﻿using WAG;
 using Gadget;
 
 
@@ -20,6 +12,45 @@ namespace FINAL
 
         static void Main(string[] args)
         {
+
+            ///Medium Gadget Test
+            GadgetMedium MediumTestGadget = new GadgetMedium();
+
+            MediumTestGadget.DisplayName();
+
+            MediumTestGadget.DisplayComponents();
+
+            System.Console.WriteLine(MediumTestGadget.GetNumberOfWidgetsTotal());
+
+            System.Console.WriteLine(MediumTestGadget.GetPrice());
+
+            MediumTestGadget.DisplayPriceDollars();
+
+
+
+            /*
+            ///Small Gadget Test
+            GadgetSmall SmallTestGadget = new GadgetSmall();
+
+            SmallTestGadget.DisplayName();
+
+            SmallTestGadget.DisplayComponents();
+            
+            System.Console.WriteLine(SmallTestGadget.GetNumberOfWidgetsTotal());
+
+            System.Console.WriteLine(SmallTestGadget.GetPrice()); 
+
+            SmallTestGadget.DisplayPriceDollars();
+            */
+
+
+
+
+
+
+
+
+
             //// 1. Display the WAG welcome
             CompanyIntro companyIntro = new CompanyIntro();  //Displays the intro
             companyIntro.Intro();

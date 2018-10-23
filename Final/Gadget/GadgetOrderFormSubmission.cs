@@ -36,7 +36,7 @@ namespace Gadget
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Small Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + mySmallGadget.NumberOfWidgets);
+                    Console.WriteLine("Number of Widgets.... " + mySmallGadget.GetNumberOfWidgetsTotal());
                     Console.WriteLine("             (each Widget has " + mySmallWidget.NumOfGears + " gears, "
                                                                        + mySmallWidget.NumOfSprings + " springs, and "
                                                                        + mySmallWidget.NumOfLevers + " lever)");
@@ -82,7 +82,7 @@ namespace Gadget
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("------------------  Medium Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + myMediumGadget.NumberOfWidgets);
+                    Console.WriteLine("Number of Widgets.... " + myMediumGadget.GetNumberOfWidgetsTotal());
                     Console.WriteLine("             (each Widget has " + myMediumWidget.NumOfGears + " gears, "
                                                                        + myMediumWidget.NumOfSprings + " springs, and "
                                                                        + myMediumWidget.NumOfLevers + " levers)");
@@ -132,7 +132,7 @@ namespace Gadget
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Large Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + myLargeGadget.NumberOfWidgets);
+                    Console.WriteLine("Number of Widgets.... " + myLargeGadget.GetNumberOfWidgetsTotal());
                     Console.WriteLine("             (each Widget has " + myLargeWidget.NumOfGears + " gears, "
                                                                        + myLargeWidget.NumOfSprings + " springs, and "
                                                                        + myLargeWidget.NumOfLevers + " levers)");

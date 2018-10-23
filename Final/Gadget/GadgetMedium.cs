@@ -8,13 +8,14 @@ namespace Gadget
     public class GadgetMedium : GadgetWithLights, IWagProduct
     {
         public override string Name { get { return "Medium Gadget"; } }
-
         
-        public override int NumberOfWidgets { get; set; } = 5;
+        public override int NumberOfSmallWidgets { get; set; } = 2;
+        public override int NumberOfMediumWidgets { get; set; } = 2;
+        public override int NumberOfLargeWidgets { get; set; } = 1;
+        
         public override int NumberOfSwitches { get; set; } = 1;
-        public override int NumberOfButtons { get; set; } = 2;
+        public override int NumberOfButtons { get; set; } = 3;
         public override int NumberOfLights { get; set; } = 3;
-        public override decimal Price { get; set; } = 50m;
 
 
         //If it has a field you do not know what to set it to, ask for it in the constructor.
@@ -38,6 +39,7 @@ namespace Gadget
 
             return userPowerSourceString;
         }
+
         
         //Constructor which guides the user to enter the power choice selection
         public GadgetMedium()
@@ -48,9 +50,13 @@ namespace Gadget
                 {
                     this.PowerSource = "Battery";
                 }
-                else
+                else if (powerSource == "S")
                 {
                     this.PowerSource = "Solar";
+                }
+                else
+                {
+                    this.PowerSource = "Unknown";
                 }
         }
     }

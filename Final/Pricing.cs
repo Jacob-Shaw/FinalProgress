@@ -2,134 +2,44 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace week1.FINAL
+namespace FINAL
 {
-    public class Pricing
+    public static class ComponentPricing
     {
-        /// <summary>
-        /// This class is used by displaypricing, but maybe not important
-        /// </summary>
+        // This class holds the componenet prices for building Widgets and Gadgets
+        //Widget Components
+        
 
-        //Gadget Components
-        private double _switchCostPerUnit    = 10.99;
-        private double _buttonCostPerUnit    = 20.87;
-        private double _lightCostPerUnit     = 30.76;
+        // Components
+        public static decimal SwitchCostPerUnit { get; set; } = 4.99m;
+        public static decimal ButtonCostPerUnit { get; set; } = 1.87m;
+        public static decimal BatteryCostPerUnit { get; set; } = 6.32m;
+        public static decimal GearCostPerUnit { get; set; } = 1.32m;
+        public static decimal SpringCostPerUnit { get; set; } = 0.52m;
+        public static decimal LeverCostPerUnit { get; set; } = 3.10m;
+        public static decimal LightCostPerUnit { get; set; } = 4.76m;
+        public static decimal SolarCostPerUnit { get; set; } = 20.21m;
+        public static decimal GeneratorCostPerUnit { get; set; } = 64.10m;
 
-        //Power Supplies
-        private double _batteryCostPerUnit   = 500.32;
-        private double _solarCostPerUnit     = 900.21;
-        private double _generatorCostPerUnit = 1100.10;
-
-        //Widget Cost per Size
-        private double _smallWidget          = 12.65;
-        private double _mediumWidget         = 14.54;
-        private double _largeWidget          = 16.43;
-
-        public virtual double SwitchCostPerUnit
+        public static decimal GetPowerSourcePrice(string powerSource)
         {
-            set
+            switch (powerSource)
             {
-                this._switchCostPerUnit = value;
-            }
-            get
-            {
-                return _switchCostPerUnit;
-            }
-        }
+                case("Battery"):
 
-        public virtual double ButtonCostPerUnit
-        {
-            set
-            {
-                this._buttonCostPerUnit = value;
-            }
-            get
-            {
-                return _buttonCostPerUnit;
-            }
-        }
+                    return BatteryCostPerUnit;
 
-        public virtual double LightCostPerUnit
-        {
-            set
-            {
-                this._lightCostPerUnit = value;
-            }
-            get
-            {
-                return _lightCostPerUnit;
-            }
-        }
+                case ("Solar"):
 
-        public virtual double SmallWidgetCost
-        {
-            set
-            {
-                this._smallWidget = value;
-            }
-            get
-            {
-                return _smallWidget;
-            }
-        }
+                    return SolarCostPerUnit;
 
-        public virtual double MediumWidgetCost
-        {
-            set
-            {
-                this._mediumWidget = value;
-            }
-            get
-            {
-                return _mediumWidget;
-            }
-        }
+                case ("Generator"):
 
-        public virtual double LargeWidgetCost
-        {
-            set
-            {
-                this._largeWidget = value;
-            }
-            get
-            {
-                return _largeWidget;
-            }
-        }
+                    return GeneratorCostPerUnit;
 
-        public virtual double BatteryCostPerUnit
-        {
-            set
-            {
-                this._batteryCostPerUnit = value;
-            }
-            get
-            {
-                return _batteryCostPerUnit;
-            }
-        }
+                default:
 
-        public virtual double SolarCostPerUnit
-        {
-            set
-            {
-                this._solarCostPerUnit = value;
-            }
-            get
-            {
-                return _solarCostPerUnit;
-            }
-        }
-
-        public virtual double GeneratorCostPerUnit
-        {
-            set
-            {
-                this._generatorCostPerUnit = value;
-            }
-            get
-            {
-                return _generatorCostPerUnit;
+                    return 0m;
             }
         }
     }
