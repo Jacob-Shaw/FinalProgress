@@ -17,14 +17,7 @@ namespace WAG
         
         public static ArrayList MasterOrderForm = new ArrayList(); 
         public static ArrayList OrderFromOrderForm = new ArrayList();
-
         
-
-        public WagCustomerTypeAndOrder()
-        {
-            CustomerType = GetOrderType();
-        }
-
         
         public string GetOrderType()
         { 
@@ -46,9 +39,14 @@ namespace WAG
 
             // Clear the screen and return the user order type
             Console.Clear();
+
             return userOrderTypeString;
         }
-        
+
+        public WagCustomerTypeAndOrder()
+        {
+            CustomerType = GetOrderType();
+        }
     }
 }
 

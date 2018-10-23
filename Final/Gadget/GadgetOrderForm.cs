@@ -32,9 +32,9 @@ namespace Gadget
             SelectNumberOfGadgets();
 
             //////Select the power source()
-            //string powerSelection = "";     //i now have a power selection!
-            //SelectPowerSource();    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+            string powerSelection = "";     //i now have a power selection!
+            SelectPowerSource();    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             /////Once the power selection is made 
 
             
@@ -64,26 +64,16 @@ namespace Gadget
                 Console.WriteLine("========================= WAG Gadget Order Form =============================");
                 Console.WriteLine("===========================  RETAIL MAIN MENU ===============================");
                 Console.WriteLine("=============================================================================");
-
-                Console.WriteLine();
-                Console.WriteLine("From this menu, you may enter the SIZE and QUANTITY of Gadgets and, ");
-                Console.WriteLine("based on your choice, various selections of switches, buttons, lights,");
-                Console.WriteLine("finishes, and power sources are available.");
-                Console.WriteLine();
-                Console.WriteLine("*NOTES: ");
-                Console.WriteLine("     Customization of Gadgets is only available via the Manufacturer option.");
-                Console.WriteLine("     Gadgets may be Unfinished, Painted, or Plated.");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("                Widgets    Switches    Buttons    Lights    Power Supply");
+                Console.WriteLine("                Widgets    Switches    Buttons    Lights     Power Supply");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine();
-                Console.WriteLine("Small Gadget:      2          1          2          0         Battery");
+                Console.WriteLine("Small Gadget:      2          1          2          0          Battery");
                 Console.WriteLine();
                 Console.WriteLine("Medium Gadget:     5          1          3          3      Battery or Solar");
                 Console.WriteLine();
                 Console.WriteLine("Large Gadget:     12          2          3          4      Solar or Generator");
-                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -134,8 +124,9 @@ namespace Gadget
 
             //////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
             ///                 Getting rid of this
-            /*
-             * 
+          
+
+
             void SelectPowerSource()
             {
                 /// Prompt user for Gadget power source////////////////////////////////////////////////////
@@ -170,7 +161,7 @@ namespace Gadget
                 }
             }
 
-            */
+            
 
             
 

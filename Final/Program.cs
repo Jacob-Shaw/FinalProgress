@@ -30,8 +30,7 @@ namespace FINAL
             
             
             //// 3. Present the products for something to add to cart
-            
-                WagProductCatalog ProductMenu = new WagProductCatalog();
+            WagProductCatalog ProductMenu = new WagProductCatalog();
 
             
 
@@ -44,32 +43,7 @@ namespace FINAL
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
