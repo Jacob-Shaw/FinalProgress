@@ -15,45 +15,47 @@ namespace Gadget
         private const string _manufacturerOrder = "M";
         
       
-        ///####################################################################################################
-        ///################   Hooray for huge constructors! ###################################################
-        ///         These are all the steps for ordering Gadgets
-        ///         Once done it returns to Main Menu.
-        ///####################################################################################################
-        //This is the constructor which takes the order type and presents the appropriate order form
-
         public GadgetOrderForm()
         {
+            //////Start of the Retail Gadget Order Form
             Console.Clear();
+
+            /////Select the appropriate order form
+            selectOrderForm();
             
-            ///Start of the Retail Gadget Order Form
-            if (WagCustomerTypeAndOrder.CustomerType == "R")
-            {
-                //Choose the retail order form
-                RetailOrderForm();
-                
-            }
-            else if (WagCustomerTypeAndOrder.CustomerType == "M")///start of manufacturer order form
-            {
-                ManufacturerOrderForm();
-            }
-
-
-            ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@See if same?
-
-            //Choose a size of gadget, s,m,l
+            /////Choose a size of gadget, s,m,l
             GadgetSizeChoice myGadgetSize = new GadgetSizeChoice(); 
             string userGadgetSizeEntered = myGadgetSize.ChooseGadgetSize();//i now have a size!
-            
+
+            /////Select the number of gadgets to buy
             int numUserGadgetsEntered;              //i now have a number of gadgets!
-            //Select the number of gadgets to buy
             SelectNumberOfGadgets();
 
-            string powerSelection = "";     //i now have a power selection!
-            //Select the power source()
-            SelectPowerSource();
+            //////Select the power source()
+            //string powerSelection = "";     //i now have a power selection!
+            //SelectPowerSource();    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            /////Once the power selection is made 
 
             
+
+
+
+
+
+            void selectOrderForm()
+            {
+                if (WagCustomerTypeAndOrder.CustomerType == "R")
+                {
+                    //Choose the retail order form
+                    RetailOrderForm();
+
+                }
+                else if (WagCustomerTypeAndOrder.CustomerType == "M")///start of manufacturer order form
+                {
+                    ManufacturerOrderForm();
+                }
+            }
 
             void RetailOrderForm()
             {
@@ -118,30 +120,31 @@ namespace Gadget
 
                     if (confirm0 == "Y")
                     {
-                        //Should drop at this point and go to MM
+                        //Should drop at this point and go to Main Menu
 
                     }
-                }
-                else
-                {
-                    //Return the number of Gadgets to buy
-
-
+                    else
+                    {
+                        SelectNumberOfGadgets();
+                    }
                 }
             }
+            
 
 
+            //////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            ///                 Getting rid of this
+            /*
+             * 
             void SelectPowerSource()
             {
                 /// Prompt user for Gadget power source////////////////////////////////////////////////////
 
-                /// display order details
-                
-
-                //Create an instance of 
-                //These are the various MasterOrderFormSubmissions
+                //Create an instance of CompleteGadgetOrderForm
+                //These are the various MasterOrderFormSubmissions  s,m,l
                 CompleteGadgetOrderForm gadgetOrderSummary = new CompleteGadgetOrderForm();
-                
+
+
                 switch (userGadgetSizeEntered)
                 {
                     case "Small":
@@ -167,12 +170,9 @@ namespace Gadget
                 }
             }
 
-
-
-
+            */
 
             
-
 
 
             void ManufacturerOrderForm()
@@ -191,14 +191,7 @@ namespace Gadget
             }
             /// end of manufactuer order form
             
-
-
-
-
-
-
-
-
+            
 
         }///end of gadget order form
         

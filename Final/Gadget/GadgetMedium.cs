@@ -40,7 +40,7 @@ namespace Gadget
 
             /// This could be part of the order form!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             Console.WriteLine();
-            Console.WriteLine("Please select power source for Medium Gadget(s):  (B)attery or (S)olar");
+            Console.WriteLine("Please select a power source for Medium Gadget(s):  (B)attery or (S)olar");
             Console.WriteLine();
 
             

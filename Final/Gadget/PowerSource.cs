@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gadget
+namespace SSSSSSSSSSS
 {
     class PowerSource
     {
         /// <summary>
+        /// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        ///                 Look at the Namespace, unused
+        /// 
+        /// 
+        /// 
         /// This class asks the user to select the power source type and 
         /// returns B or S for Medium/    G or S for Large
         /// </summary>

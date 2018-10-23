@@ -22,7 +22,16 @@ namespace Gadget
                 case "Small":
                     Console.WriteLine(" ");
 
+
+
+                    ///This is where the creation of the gadget object occurs, so this
+                    /// is where the construction information needs to be
                     GadgetSmall mySmallGadget = new GadgetSmall();
+
+
+
+
+                    //Can keep this because it will not change
                     WidgetSmall mySmallWidget = new WidgetSmall();
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Small Gadget -------------------");
@@ -60,7 +69,15 @@ namespace Gadget
                 case "Medium":
                     Console.WriteLine();
 
+
+
+
                     GadgetMedium myMediumGadget = new GadgetMedium();
+
+
+
+
+                    //Can keep this because it will not change
                     WidgetMedium myMediumWidget = new WidgetMedium();
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("------------------  Medium Gadget -------------------");
@@ -85,7 +102,7 @@ namespace Gadget
                     //display the number of gadgets ordered for this addition to the masterorderform 
                     //display the cost of this addition
                     Console.WriteLine();
-                    Console.WriteLine("Number of Small Gadgets ordering = " + gadgetsOrdered);
+                    Console.WriteLine("Number of Medium Gadgets ordering = " + gadgetsOrdered);
                     Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
 
             ///////////////////ask the user to confirm!!!!!!!!!!!!!
@@ -102,7 +119,15 @@ namespace Gadget
                 case "Large":
                     Console.WriteLine();
 
+
+
+
+
+
+                    //Create
                     GadgetLarge myLargeGadget = new GadgetLarge();
+
+                    //Can keep this because it will not change
                     WidgetLarge myLargeWidget = new WidgetLarge();
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Large Gadget -------------------");
@@ -125,7 +150,7 @@ namespace Gadget
                     //display the number of gadgets ordered for this addition to the masterorderform 
                     //display the cost of this addition
                     Console.WriteLine();
-                    Console.WriteLine("Number of Small Gadgets ordering = " + gadgetsOrdered);
+                    Console.WriteLine("Number of Large Gadgets ordering = " + gadgetsOrdered);
                     Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
 
              ///////////////////ask the user to confirm!!!!!!!!!!!!!

@@ -29,7 +29,7 @@ namespace WAG
         {
             Console.Clear();
             Console.WriteLine("=============================================================================");
-            Console.WriteLine("========================== WAG Order Form ===================================");
+            Console.WriteLine("============================ WAG Order Form =================================");
             Console.WriteLine("=============================================================================");
             Console.WriteLine();
         }
@@ -134,13 +134,7 @@ namespace WAG
 
 
 
-
-
-
-
-
-
-                    //Take customer to order form if one exists, otherwise add product to customer order form
+                    
                 }
                 //Selection ended up being greater than the length of the list
                 else
@@ -323,12 +317,12 @@ namespace WAG
 
 
 
-                        if ((lineItem > WagProductsList.Length) || (check <= 0))
+                        if ((lineItem > WagCustomerTypeAndOrder.MasterOrderForm.Count) || (check <= 0))
                         {
                             Console.WriteLine("The line item you entered could not be found.");
                             Console.WriteLine("Press any key to continue...");
                             Console.ReadKey();
-                            printItAll();
+                            Console.Clear();
                             PresentSelectionMenu();
 
                         }
@@ -370,19 +364,23 @@ namespace WAG
                         PresentSelectionMenu(); 
                     }
 
-
-                        
-
-
-
-
+                    
 
                     break;
                     
 
+
+
+
+///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                 case "P":
 
                     break;
+
+
+
+
+
 
                 case "X":
                     Console.WriteLine();
