@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WAG
+namespace FINAL
 {
     public interface IWagProduct
     {
-        ///This is also necessary to add products to a List<IWagProduct>
-        
+        string GetLineItemOrderDetails { get; }
+
+        decimal GetLineItemPrice { get; }
     }
 }

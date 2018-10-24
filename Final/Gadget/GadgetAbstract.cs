@@ -26,15 +26,71 @@ namespace Gadget
         public abstract int NumberOfSwitches { get; set; }  
         public abstract int NumberOfButtons { get; set; }
 
-        
+        //For Decorator
+        public decimal GetLineItemPrice { get { return GetPrice(); } }
+        public string GetLineItemOrderDetails { get { return (" +1 " + this.Name); } }
+
+
         //Methods
         public virtual void DisplayComponents()
         {
-            Console.WriteLine("Small Widgets: " + this.NumberOfSmallWidgets);
-            Console.WriteLine("Medium Widgets: " + this.NumberOfMediumWidgets);
-            Console.WriteLine("Swithes: " + this.NumberOfSwitches);
-            Console.WriteLine("Buttons: " + this.NumberOfButtons);
-            Console.WriteLine("PowerSource: " + this.PowerSource);
+            // These are used to get the #of components (gears, springs, levers)
+            WidgetSmall SmallWidget = new WidgetSmall();
+            WidgetMedium MediumWidget = new WidgetMedium();
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Number of Small Widgets: ");
+            Console.CursorLeft = 30;
+            Console.WriteLine( this.NumberOfSmallWidgets );
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("      Composed of:");
+
+            Console.CursorLeft = 4;
+            Console.Write("# of Gears....." + SmallWidget.NumOfGears + "\n");
+            Console.CursorLeft = 5;
+            Console.Write("# of Springs.." + SmallWidget.NumOfSprings + "\n");
+            Console.CursorLeft = 6;
+            Console.Write("# of Levers.." + SmallWidget.NumOfLevers + "\n");
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Number of Medium Widgets: ");
+            Console.CursorLeft = 30;
+            Console.WriteLine( this.NumberOfMediumWidgets );
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine();
+            Console.WriteLine("      Composed of:");
+
+            
+            Console.CursorLeft = 4;
+            Console.Write("# of Gears....." + MediumWidget.NumOfGears + "\n");
+            Console.CursorLeft = 5;
+            Console.Write("# of Springs.." + MediumWidget.NumOfSprings + "\n");
+            Console.CursorLeft = 6;
+            Console.Write("# of Levers.." + MediumWidget.NumOfLevers + "\n");
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Number of Switches: ");
+            Console.CursorLeft = 30;
+            Console.WriteLine( this.NumberOfSwitches );
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Number of Buttons: ");
+            Console.CursorLeft = 30;
+            Console.WriteLine( this.NumberOfButtons );
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Power Source: ");
+            Console.CursorLeft = 30;
+            Console.WriteLine( this.PowerSource );
+            Console.ForegroundColor = ConsoleColor.White;
+
         }
 
         // There is a default for calculating the total number of 

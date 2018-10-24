@@ -11,15 +11,18 @@ namespace WAG
     /// This IS the customer order form                          ------Looks Good-------
     /// </summary>
     
-    public class WagCustomerTypeAndOrder
+    public static class WagCustomerTypeAndOrder
     {
-        public static string CustomerType = ""; 
+        public static string CustomerType = "";
+
+        public static ArrayList MasterOrderForm = new ArrayList();
+        //public ArrayList OrderFromOrderForm = new ArrayList();
+
+        //public static decimal AmountInQuestion;
+
+        public static decimal RunningTotal;
         
-        public static ArrayList MasterOrderForm = new ArrayList(); 
-        public static ArrayList OrderFromOrderForm = new ArrayList();
-        
-        
-        public string GetOrderType()
+        public static void GetOrderType()
         { 
             // Ask the user to specify the order type, Retail or Manufacturer.
             Console.WriteLine();
@@ -40,13 +43,24 @@ namespace WAG
             // Clear the screen and return the user order type
             Console.Clear();
 
-            return userOrderTypeString;
+            CustomerType = userOrderTypeString;
+
+            //return userOrderTypeString;
         }
 
-        public WagCustomerTypeAndOrder()
+        public static void AddToRunningTotal(decimal price)
+        {
+            RunningTotal += price;
+        }
+
+
+        /*
+        public static WagCustomerTypeAndOrder()
         {
             CustomerType = GetOrderType();
         }
+
+        */
     }
 }
 

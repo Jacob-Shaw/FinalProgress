@@ -1,18 +1,28 @@
 ﻿using WAG;
 using Gadget;
 using Widget;
+using System;
+using Final;
+
 
 
 namespace FINAL
 {
     class Program
     {
-
-
-
-
         static void Main(string[] args)
         {
+            Console.WindowLeft = 0;
+            Console.WindowTop = 0;
+            //Console.SetWindowPosition(10, 10);
+            Console.SetWindowSize(80, 50);
+
+
+            ProductPricing yyy = new ProductPricing("Gear");
+
+
+
+
 
             /*
 
@@ -64,8 +74,8 @@ namespace FINAL
             System.Console.WriteLine(SmallTestGadget.GetPrice()); 
 
             SmallTestGadget.DisplayPriceDollars();
+            
             */
-
 
 
 
@@ -77,12 +87,13 @@ namespace FINAL
             //// 1. Display the WAG welcome
             CompanyIntro companyIntro = new CompanyIntro();  //Displays the intro
             companyIntro.Intro();
-            
+
 
             //// 2. Get the user type
-            WagCustomerTypeAndOrder newCustomerOrder = new WagCustomerTypeAndOrder();  //creates orderform
-            
-            
+            WagCustomerTypeAndOrder.GetOrderType();
+            //WagCustomerTypeAndOrder newCustomerOrder = new WagCustomerTypeAndOrder();  //creates orderform
+
+
             //// 3. Present the products for something to add to cart
             WagProductCatalog ProductMenu = new WagProductCatalog();
 

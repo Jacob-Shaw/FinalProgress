@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FINAL;
 
 namespace Widget
 {
@@ -15,7 +16,7 @@ namespace Widget
     /// 3. Can be used to create a body of methods for creational design pattterns to build from.
     /// 
     /// </summary>
-    public interface IWidget
+    public interface IWidget 
     {
         void DisplayComponents();
         decimal GetPrice();

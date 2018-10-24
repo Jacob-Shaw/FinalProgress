@@ -7,7 +7,7 @@ using FINAL;
 
 namespace Gadget
 {
-    public class GadgetSmall : GadgetAbstract, IWagProduct
+    public class GadgetSmall : GadgetAbstract
     {
         public override string Name { get { return "Small Gadget"; } }
 

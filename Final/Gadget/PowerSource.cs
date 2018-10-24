@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gadget
+namespace Gadgetzzzzzzzzzzzzzzzzzzzzz
 {
     class PowerSource
     {

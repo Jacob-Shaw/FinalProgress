@@ -5,15 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gadget;
+using Final;
 
 namespace WAG
 {
     public class WagProductCatalog
     {
         // List of company products
-        string[] WagProductsList = new string[] { "Gadget", "Small Widget", "Medium Widget", "Large Widget"  };
-
+        string[] WagProductsList = new string[] { "Gadget", "Gear", "Spring", "Lever"  };
         
+
+        // Used for calculating customer total from MasterOrderForm
+        decimal _runningTotal;
+
         // Method for displaying the title
         public void displayCatalogTitle()
         {
@@ -383,8 +387,14 @@ namespace WAG
                     break;
             }
         }
+
+
+
+
         
-        // Method to print all of the items in the customer order to the console
+
+
+        // Method to print all of the items in the Master customer order formto the console
         void printItAll()
         {
             Console.Clear();
@@ -403,6 +413,7 @@ namespace WAG
             }
                
             int counter = 1;
+            
 
             // Print everything in the order form
             foreach (Object entry in WagCustomerTypeAndOrder.MasterOrderForm)
@@ -415,18 +426,53 @@ namespace WAG
                 {
                     Console.Write(counter + ". ");
 
-                    // Print each item in the array that is in the curretn entry of the order form
-                    foreach (Object listItem in ArrayInMasterList)
+
+
+                    int x = 0;
+
+                    // Print each item in the array that is in the current entry of the order form
+                    foreach (Object listItem in ArrayInMasterList )
                     {
-                        Console.Write(listItem + " ");
+                        
+                        if (x > 0)
+                        {
+                            Console.Write(listItem + " ");
+                        }
+                        else
+                        {
+                            // Add price to running total
+
+                            decimal price = decimal.Parse(listItem.ToString());
+
+                            WagCustomerTypeAndOrder.AddToRunningTotal(price);
+
+                            x++;
+                        }
+                            
                     }
 
                     Console.WriteLine();
+
+
+
+
+
+
+
                 }
                 else
                 {
                     // Print out single string entrys in the order form
                     Console.WriteLine(counter + ". " + entry);
+                    
+
+
+
+                    //Looks up the price and adds to RunningTotal
+                    ProductPricing getPrice = new ProductPricing(entry);
+                    
+
+
                 }
 
                 counter++;
@@ -441,5 +487,8 @@ namespace WAG
         {
             PresentSelectionMenu();
         }
+
+        
+
     }
 }

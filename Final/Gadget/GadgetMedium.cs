@@ -5,7 +5,7 @@ using WAG;
 
 namespace Gadget
 {
-    public class GadgetMedium : GadgetWithLights, IWagProduct
+    public class GadgetMedium : GadgetWithLights
     {
         public override string Name { get { return "Medium Gadget"; } }
         

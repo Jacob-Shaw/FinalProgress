@@ -6,9 +6,12 @@ namespace FINAL
 {
     public static class ComponentPricing
     {
+        
+
+
         // This class holds the componenet prices for building Widgets and Gadgets
         //Widget Components
-        
+
 
         // Components
         public static decimal SwitchCostPerUnit { get; set; } = 4.99m;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using WAG;
 
-namespace Widget
+namespace Widget 
 {
     /// <summary>
     /// This abstract class describes what a basic Gadget "is".
@@ -18,7 +18,12 @@ namespace Widget
         public abstract int NumOfGears { get; set; }
         public abstract int NumOfSprings { get; set; }
         public abstract int NumOfLevers { get; set; }
+        public abstract string Name { get; } 
+            
         
+        //For Decorator
+        public decimal GetLineItemPrice { get { return GetPrice(); } }
+        public string GetLineItemOrderDetails { get { return  (" +1 " + this.Name ); } }
 
         /// By creating this method we are giving all Widgets a method to
         /// meet the neeeds of IWidget. By being virtual, all Widgets which
@@ -36,5 +41,9 @@ namespace Widget
                         (NumOfSprings * ComponentPricing.SpringCostPerUnit) +
                         (NumOfLevers * ComponentPricing.LeverCostPerUnit));
         }
+
+
+
+
     }
 }
