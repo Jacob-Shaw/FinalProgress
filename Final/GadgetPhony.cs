@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using WAG;
-using Widget;
-using FINAL;
+using System.Threading.Tasks;
 
 namespace Gadget
+
 {
-    public class GadgetSmall : GadgetAbstract, IWagProduct
+    class GadgetPhony : GadgetAbstract
     {
-        public override string Name { get { return "Small Gadget"; } }
+        public override string Name { get { return "Phony Gadget"; } }
 
         public override int NumberOfSmallWidgets { get; set; } = 1;
         public override int NumberOfMediumWidgets { get; set; } = 1;
         public override int NumberOfSwitches { get; set; } = 1;
         public override int NumberOfButtons { get; set; } = 2;
-        public override string PowerSource { get; set; } = "Battery";
-        
+        public override string PowerSource { get; set; } = "Quantum";
     }
 }

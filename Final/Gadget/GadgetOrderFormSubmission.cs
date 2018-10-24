@@ -9,8 +9,15 @@ namespace Gadget
     public class CompleteGadgetOrderForm
     {
         ///  
-        ///This class will clear the screen and based on the gadget "sizeSelected" and "powerSelected" 
-        ///display the contents of the current item to add to the Masterorderform
+        ///This class will clear the screen and
+        ///based on the gadget "sizeSelected" and "powerSelected" create the new Gadget object
+        ///display the contents of the current item
+        ///
+        ///********Allow for customization IF POSSIBLE!***************88
+        ///                 USE THE DECORATOR
+        ///                 
+        /// 
+        ///add to the Masterorderform
 
 
         public void DisplayOrder(int gadgetsOrdered, string sizeSelected, string powerSelected)
@@ -19,6 +26,25 @@ namespace Gadget
 
             switch (sizeSelected)
             {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 case "Small":
                     Console.WriteLine(" ");
 
@@ -60,11 +86,33 @@ namespace Gadget
                     
              ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
 
-
-
-
+                    
 
                     break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 case "Medium":
                     Console.WriteLine();
@@ -109,9 +157,34 @@ namespace Gadget
 
              ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
 
-
-
+                    
                     break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -119,10 +192,7 @@ namespace Gadget
                 case "Large":
                     Console.WriteLine();
 
-
-
-
-
+                    
 
                     //Create
                     GadgetLarge myLargeGadget = new GadgetLarge();

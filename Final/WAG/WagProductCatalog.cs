@@ -11,7 +11,7 @@ namespace WAG
     public class WagProductCatalog
     {
         // List of company products
-        string[] WagProductsList = new string[] { "Gadget", "Other Item For Sale No Order Form" };
+        string[] WagProductsList = new string[] { "Gadget", "Small Widget", "Medium Widget", "Large Widget"  };
 
         
         // Method for displaying the title

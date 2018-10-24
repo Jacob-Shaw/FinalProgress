@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DisplayPricing.cs" />
+    <Compile Include="GadgetPhony.cs" />
     <Compile Include="Gadget\GadgetTest.cs" />
     <Compile Include="Gadget\GadgetAbstract.cs" />
     <Compile Include="Gadget\GadgetCustomizable.cs" />

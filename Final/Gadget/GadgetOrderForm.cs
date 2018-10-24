@@ -24,6 +24,7 @@ namespace Gadget
             selectOrderForm();
             
             /////Choose a size of gadget, s,m,l
+            ///This will be used to select the gadget size
             GadgetSizeChoice myGadgetSize = new GadgetSizeChoice(); 
             string userGadgetSizeEntered = myGadgetSize.ChooseGadgetSize();//i now have a size!
 
@@ -32,16 +33,12 @@ namespace Gadget
             SelectNumberOfGadgets();
 
             //////Select the power source()
-            string powerSelection = "";     //i now have a power selection!
-            SelectPowerSource();    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           // string GadgetSelection = "";     //i now have a power selection!  NO I DON'T!!!
+            CreateGadgetSelection(userGadgetSizeEntered);    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             /////Once the power selection is made 
 
             
-
-
-
-
 
             void selectOrderForm()
             {
@@ -127,12 +124,13 @@ namespace Gadget
           
 
 
-            void SelectPowerSource()
+            void CreateGadgetSelection( string gadgetSizeToCreate )
             {
-                /// Prompt user for Gadget power source////////////////////////////////////////////////////
+                /// Let's create the Gadget!
+                ///
+                ///@@@@@@@@@@@@@@@@@@@@@@  and perhaps we can add to arraylist from here
+                ///
 
-                //Create an instance of CompleteGadgetOrderForm
-                //These are the various MasterOrderFormSubmissions  s,m,l
                 CompleteGadgetOrderForm gadgetOrderSummary = new CompleteGadgetOrderForm();
 
 
@@ -184,9 +182,12 @@ namespace Gadget
             
             
 
-        }///end of gadget order form
+        }
+
         
+        ///end of gadget order form
+
     }///end of class gadgets
-    
+
     ///end of namespace
 }

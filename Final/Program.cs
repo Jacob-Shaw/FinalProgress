@@ -1,5 +1,6 @@
 ﻿using WAG;
 using Gadget;
+using Widget;
 
 
 namespace FINAL
@@ -13,6 +14,28 @@ namespace FINAL
         static void Main(string[] args)
         {
 
+            /*
+
+            ///Small Widget test
+
+            WidgetSmall SmallTestWidget = new WidgetSmall();
+
+            SmallTestWidget.DisplayComponents();
+
+            System.Console.WriteLine(SmallTestWidget.NumOfGears);
+            System.Console.WriteLine(SmallTestWidget.NumOfLevers);
+            System.Console.WriteLine(SmallTestWidget.NumOfSprings);
+
+            System.Console.WriteLine(SmallTestWidget.GetPrice());
+
+            */
+
+
+
+
+
+
+            /*
             ///Medium Gadget Test
             GadgetMedium MediumTestGadget = new GadgetMedium();
 
@@ -26,7 +49,7 @@ namespace FINAL
 
             MediumTestGadget.DisplayPriceDollars();
 
-
+            */
 
             /*
             ///Small Gadget Test
