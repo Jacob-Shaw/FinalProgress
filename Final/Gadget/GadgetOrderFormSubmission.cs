@@ -32,13 +32,12 @@ namespace Gadget
             switch (sizeSelected)
             {
                 case "Small":
+
                     Console.Clear();
 
                     // This is the Small Gadget we are creating
                     GadgetSmall mySmallGadget = new GadgetSmall();
 
-                    //This is used for pricing
-                    //WidgetSmall mySmallWidget = new WidgetSmall();
 
                     // Display the Form
                     Console.WriteLine("-----------------------------------------------------");
@@ -47,6 +46,7 @@ namespace Gadget
                     Console.WriteLine();
 
                     mySmallGadget.DisplayComponents();
+
                     Console.WriteLine();
                     Console.WriteLine("-----------------------------------------------------");
 
@@ -60,19 +60,29 @@ namespace Gadget
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("      $" + gadgetsOrdered * mySmallGadget.GetPrice());
                     Console.ForegroundColor = ConsoleColor.White;
-                    
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+                    AddItemToOrder(gadgetsOrdered, mySmallGadget);
+
+
+
+
+                    /*
+
 
                     //This is where we ask the customer to confirm the order
                     ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
 
                     Console.WriteLine("Add this item to your order?");
+                    Console.WriteLine();
                     Console.WriteLine("(Y) Yes  -or-  or Press any other key to Cancel this order.");
 
                     string userConfirmOrder = Console.ReadLine().ToUpper();
 
                     if (userConfirmOrder == "Y")
                     {
-
+                        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Duplicate this to med and large
 
                         //Add item to order
                         //Price first, Then the rest as it will display
@@ -82,22 +92,18 @@ namespace Gadget
 
                         WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
 
-                        //WagCustomerTypeAndOrder.OrderFromOrderForm.Clear();
                         
-                        /*
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        WagCustomerTypeAndOrder.OrderFromOrderForm.Add();
-                        */
 
                     }
+
+
+        */
+
 
                     break;
 
 
+                   
 
 
 
@@ -109,32 +115,33 @@ namespace Gadget
 
 
 
-
-
-
+                    
 
                 case "Medium":
-                    Console.WriteLine();
+
+                    Console.Clear();
 
                     GadgetMedium myMediumGadget = new GadgetMedium();
+                    
 
-                    //Can keep this because it will not change
-                    WidgetMedium myMediumWidget = new WidgetMedium();
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("------------------  Medium Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
 
-
-
-
-                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                    //My addition to this
+                    myMediumGadget.DisplayComponents();
+                    
 
                     //display the number of gadgets ordered for this addition to the masterorderform 
                     //display the cost of this addition
                     Console.WriteLine();
                     Console.WriteLine("Number of Medium Gadgets ordering = " + gadgetsOrdered);
-                    Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
+                    Console.Write("Total Price of this item order:");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("      $" + gadgetsOrdered * myMediumGadget.GetPrice());
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine();
+                    Console.WriteLine();
+
 
                     ///////////////////ask the user to confirm!!!!!!!!!!!!!
 
@@ -144,92 +151,69 @@ namespace Gadget
                     break;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    
 
                 case "Large":
-                    Console.WriteLine();
 
-
-
-                    //Create
+                    Console.Clear();
+                    
                     GadgetLarge myLargeGadget = new GadgetLarge();
-
-                    //Can keep this because it will not change
-                    WidgetLarge myLargeWidget = new WidgetLarge();
+                    
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Large Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
-                    Console.WriteLine("Number of Widgets.... " + myLargeGadget.GetNumberOfWidgetsTotal());
-                    Console.WriteLine("             (each Widget has " + myLargeWidget.NumOfGears + " gears, "
-                                                                       + myLargeWidget.NumOfSprings + " springs, and "
-                                                                       + myLargeWidget.NumOfLevers + " levers)");
-                    Console.WriteLine("Number of Switches... " + myLargeGadget.NumberOfSwitches);
-                    Console.WriteLine("Number of Buttons.... " + myLargeGadget.NumberOfButtons);
-                    Console.WriteLine("Number of Lights..... " + myLargeGadget.NumberOfLights);
-                    //Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource); //(backup)
-                    Console.WriteLine("Power Source......... " + myLargeGadget.PowerSource);
 
-
-
-                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                    //My addition to this
-
-                    //display the number of gadgets ordered for this addition to the masterorderform 
-                    //display the cost of this addition
+                    myLargeGadget.DisplayComponents();
+                    
                     Console.WriteLine();
                     Console.WriteLine("Number of Large Gadgets ordering = " + gadgetsOrdered);
-                    Console.WriteLine("Total Price of this item order: " + gadgetsOrdered * 1000);
+                    Console.WriteLine();
+                    Console.Write("Total Price of this item order:");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("      $" + gadgetsOrdered * myLargeGadget.GetPrice());
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine();
+                    Console.WriteLine();
+
 
                     ///////////////////ask the user to confirm!!!!!!!!!!!!!
 
                     ////////////////add to order if yes then cs and MM, otherwise cs display Main Menu
 
 
-
-
-
                     break;
-
-
-
             }
 
             
           
-
         }
 
-        /*public void AddToOrder(string x)
+
+        void AddItemToOrder(int gadgetsOrdered, GadgetAbstract AddingGadget)
         {
-            //WagCustomerTypeAndOrder.OrderFromOrderForm.Add(x);
-            //WagCustomerTypeAndOrder.OrderFromOrderForm.AddRange(1, 2, 3, 4, 5, 6);
+
+            Console.WriteLine("Add this item to your order?");
+            Console.WriteLine();
+            Console.WriteLine("(Y) Yes  -or-  or Press any other key to Cancel this order.");
+
+            string userConfirmOrder = Console.ReadLine().ToUpper();
+
+            if (userConfirmOrder == "Y")
+            {
+
+
+                //Add item to order
+                //Price first, Then the rest as it will display
+                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetPrice());
+                OrderFromOrderForm.Add(gadgetsOrdered);
+                OrderFromOrderForm.Add(AddingGadget.Name);
+
+                WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
+
+            }
+
         }
-        */
+
+
     }
 }
