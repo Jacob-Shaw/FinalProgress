@@ -23,7 +23,7 @@ namespace WAG
         {
             Console.Clear();
             Console.WriteLine("=============================================================================");
-            Console.WriteLine("========================== WAG Product Catalog ==============================");
+            Console.WriteLine("========================== WAG PRODUCT LIST =================================");
             Console.WriteLine("=============================================================================");
             Console.WriteLine();
         }
@@ -32,7 +32,7 @@ namespace WAG
         {
             Console.Clear();
             Console.WriteLine("=============================================================================");
-            Console.WriteLine("============================ WAG Order Form =================================");
+            Console.WriteLine("========================== YOUR CURRENT ORDER ===============================");
             Console.WriteLine("=============================================================================");
             Console.WriteLine();
         }
@@ -52,7 +52,7 @@ namespace WAG
         /// Method for asking and getting the user choice from the products menu
         public void getUserChoice()
         {
-            Console.WriteLine();
+            
             
             string userChoice = ""; 
             
@@ -62,7 +62,8 @@ namespace WAG
             // Get new input from the customer if the user entry is not a number
             while (!Int32.TryParse(userChoice, out check))
             {
-                Console.WriteLine("Please select a product number from the catalog: ");
+                Console.WriteLine();
+                Console.Write("PLEASE SELECT A LINE ITEM NUMBER: ");
                 userChoice = Console.ReadLine();
             }
 
@@ -70,7 +71,7 @@ namespace WAG
             // Less than 0? Let's see if Absolute Value will solve the problem,
             if (check < 0)
             {
-                Console.WriteLine("You're number was less than 0.");
+                Console.WriteLine("YOU'RE NUMBER WAS LESS THAN 0.");
                 check = Math.Abs(check);
                
                 // If converting to a positive number gives a proper selection
@@ -120,7 +121,7 @@ namespace WAG
                         WagCustomerTypeAndOrder.MasterOrderForm.Add(checkThisItem2);
 
                         displayOrderFormTitle();
-                        Console.WriteLine("Press any key to continue...");
+                        Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                         Console.ReadKey();
                         Console.Clear();
                         PresentSelectionMenu();
@@ -137,7 +138,7 @@ namespace WAG
                     presentProducts();
 
                     Console.WriteLine();
-                    Console.WriteLine("You entered a negative number.  Converting to positive did not help.");
+                    Console.WriteLine("YOU ENTERED A NEGATIVE NUMBER. CONVERTING TO A POSITIVE NUMBER DID NOT HELP.");
                     Console.WriteLine();
 
                     // Ask the user to try adding a product again.
@@ -155,7 +156,7 @@ namespace WAG
                 presentProducts();
                 
                 Console.WriteLine();
-                Console.WriteLine("The selection you have made does not exist.");
+                Console.WriteLine("THE SELECTION YOU MADE DOES NOT EXIST. PLEASE TRY AGAIN");
                 Console.WriteLine();
 
                 getUserChoice();
@@ -214,7 +215,7 @@ namespace WAG
 
                     displayOrderFormTitle();
                     printItAll();
-                    Console.WriteLine("Press any key to continue...");
+                    Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                     Console.ReadKey();
                     Console.Clear();
                     PresentSelectionMenu();
@@ -231,16 +232,16 @@ namespace WAG
         private void PresentSelectionMenu()
         {
             Console.WriteLine("=============================================================================");
-            Console.WriteLine("============================= WAG Main Menu =================================");
+            Console.WriteLine("============================= WAG MAIN MENU =================================");
             Console.WriteLine("=============================================================================");
             Console.WriteLine();
-            Console.WriteLine("(A) Add an item to your order  ");
-            Console.WriteLine("(D) Display your current order");
-            Console.WriteLine("(R) Remove an item from your order form");
-            Console.WriteLine("(P) Proceed to confirm your order for checkout");
-            Console.WriteLine("(X) Cancel the order and exit");
+            Console.WriteLine("(A) ADD AN ITEM TO YOUR ORDER  ");
+            Console.WriteLine("(D) DISPLAY YOUR CURRENT ORDER ");
+            Console.WriteLine("(R) REMOVE AN ITEM FROM YOUR ORDER");
+            Console.WriteLine("(C) CONFIRM ORDER AND CHECKOUT");
+            Console.WriteLine("(X) CANCEL ORDER AND EXIT");
             Console.WriteLine();
-            Console.WriteLine("Please make a selection:");
+            Console.Write("PLEASE MAKE A SELECTION AND THEN PRESS \"ENTER\": " );
 
             string userChoice = Console.ReadLine();
             
@@ -270,7 +271,7 @@ namespace WAG
 
                     printItAll();       
                     
-                    Console.WriteLine("Press any key to continue...");
+                    Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                     Console.ReadKey();
                     Console.Clear();
 
@@ -283,24 +284,24 @@ namespace WAG
 
                     printItAll();
                     Console.WriteLine();
-                    Console.WriteLine("Are you sure you wish to remove an item from your order?");
-                    Console.WriteLine("(Y) Yes  -or-  or Press any other key to return to Main Menu. ");
+                    Console.WriteLine("ARE YOU SURE YOU WISH TO REMOVE AN ITEM FROM YOUR ORDER?");
+                    Console.Write("(Y) YES -or- PRESS ANY OTHER KEY TO CANCEL, AND THEN PRESS \"ENTER\": ");
+
                     string removeAnswer = Console.ReadLine();
 
                     if (removeAnswer.ToUpper() == "Y")
                     {
-                        Console.WriteLine("Which Line item would you like to remove?");
+                        Console.WriteLine("WHICH LINE ITEM NUMBER WOULD YOU LIKE TO REMOVE?");
                         string removeLine = Console.ReadLine();
 
 
                         ///Make sure it is a number first!
                         int check = 0;
-
-
+                        
                         //Get a selection from the customer  //if the user entry is not a number
                         while (!Int32.TryParse(removeLine, out check))
                         {
-                            Console.WriteLine("Please select a line item from the order: ");
+                            Console.WriteLine("PLEASE SELECT A LINE ITEM NUMBER TO REMOVE: ");
                             userChoice = Console.ReadLine();
                         }
                         
@@ -308,8 +309,8 @@ namespace WAG
                         
                         if ((lineItem > WagCustomerTypeAndOrder.MasterOrderForm.Count) || (check <= 0))
                         {
-                            Console.WriteLine("The line item you entered could not be found.");
-                            Console.WriteLine("Press any key to continue...");
+                            Console.WriteLine("THE LINE ITEM YOU ENTERED COULD NOT BE FOUND.");
+                            Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                             Console.ReadKey();
                             Console.Clear();
                             PresentSelectionMenu();
@@ -317,8 +318,8 @@ namespace WAG
                         }
                         else
                         {
-                            Console.WriteLine("Are you sure you wish to remove line item #" + lineItem + "?");
-                            Console.WriteLine("(Y) Yes  -or-  or Press any other key to return to Main Menu. ");
+                            Console.WriteLine("ARE YOU SURE YOU WISH TO REMOVE LINE ITEM #" + lineItem + "?");
+                            Console.Write("(Y) YES -or- PRESS ANY OTHER KEY TO CANCEL, AND THEN PRESS \"ENTER\": ");
 
                             string confirmRemoval = Console.ReadLine().ToUpper();
 
@@ -328,7 +329,7 @@ namespace WAG
                                 Console.Clear();
                                 displayOrderFormTitle();
                                 printItAll();
-                                Console.WriteLine("Press any key to continue...");
+                                Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                                 Console.ReadKey();
                                 Console.Clear();
                                 PresentSelectionMenu();
@@ -363,8 +364,8 @@ namespace WAG
                                         // Code to Cancel the order and Exit
 
                     Console.WriteLine();
-                    Console.WriteLine("Are you sure you wish to cancel your order and exit?");
-                    Console.WriteLine("(Y) Yes  -or-  or Press any other key to return to Main Menu. ");
+                    Console.WriteLine("ARE YOU SURE YOU WISH TO CANCEL YOUR ORDER AND EXIT?");
+                    Console.Write("(Y) YES -or- PRESS ANY OTHER KEY TO CANCEL, AND THEN PRESS \"ENTER\": ");
 
                     string exitAnswer = Console.ReadLine();
 
@@ -404,9 +405,9 @@ namespace WAG
             // If there are no items in the order form
             if (WagCustomerTypeAndOrder.MasterOrderForm.Count == 0)
             {
-                Console.WriteLine("There are no items in your order.");
+                Console.WriteLine("THERE ARE NO ITEMS IN YOUR ORDER.");
                 Console.WriteLine();
-                Console.WriteLine("Press any key to continue...");
+                Console.WriteLine("PRESS ANY KEY TO CONTINUE...");
                 Console.ReadKey();
                 Console.Clear();
                 PresentSelectionMenu();

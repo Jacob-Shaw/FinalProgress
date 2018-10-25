@@ -3,6 +3,7 @@ using Gadget;
 using Widget;
 using WAG;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace Gadget
 {
@@ -43,10 +44,10 @@ namespace Gadget
                     
                 case "Medium":
 
+                    GadgetMedium myMediumGadget = new GadgetMedium();
+
                     Console.Clear();
 
-                    GadgetMedium myMediumGadget = new GadgetMedium();
-                    
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("------------------  Medium Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
@@ -61,11 +62,11 @@ namespace Gadget
                     break;
                     
                 case "Large":
-
-                    Console.Clear();
                     
                     GadgetLarge myLargeGadget = new GadgetLarge();
-                    
+
+                    Console.Clear();
+
                     Console.WriteLine("-----------------------------------------------------");
                     Console.WriteLine("-------------------  Large Gadget -------------------");
                     Console.WriteLine("-----------------------------------------------------");
@@ -84,7 +85,7 @@ namespace Gadget
         void AddItemToOrder(int gadgetsOrdered, GadgetAbstract AddingGadget)
         {
             Console.WriteLine();
-            Console.WriteLine("Number of " + AddingGadget + " Gadgets ordering = " + gadgetsOrdered);
+            Console.WriteLine("Number of " + AddingGadget.Name + " Gadgets ordering = " + gadgetsOrdered);
             Console.WriteLine();
             Console.Write("Total Price of this item order:");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -92,12 +93,23 @@ namespace Gadget
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine();
+
+
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Like the color choice below for other forms ?????????????????????
+            
             Console.WriteLine("Add this item to your order?");
             Console.WriteLine();
-            Console.WriteLine("(Y) Yes  -or-  or Press any other key to Cancel this order.");
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("(Y) Yes ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("-or- Press any other key to ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Cancel");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(", and then press \"Enter\": ");
+            
             string userConfirmOrder = Console.ReadLine().ToUpper();
-
+            
             if (userConfirmOrder == "Y")
             {
                 OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetPrice());

@@ -79,11 +79,13 @@ namespace Gadget
             Console.Write("Number of Switches: ");
             Console.CursorLeft = 30;
             Console.WriteLine( this.NumberOfSwitches );
+            Console.WriteLine();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Buttons: ");
             Console.CursorLeft = 30;
             Console.WriteLine( this.NumberOfButtons );
+            Console.WriteLine();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Power Source: ");

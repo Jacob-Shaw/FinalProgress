@@ -26,17 +26,17 @@ namespace FINAL
 
         public static decimal GetPowerSourcePrice(string powerSource)
         {
-            switch (powerSource)
+            switch (powerSource.ToUpper())
             {
-                case("Battery"):
+                case("BATTERY"):
 
                     return BatteryCostPerUnit;
 
-                case ("Solar"):
+                case ("SOLAR"):
 
                     return SolarCostPerUnit;
 
-                case ("Generator"):
+                case ("GENERATOR"):
 
                     return GeneratorCostPerUnit;
 

@@ -62,16 +62,15 @@ namespace Gadget
             {
                 //Prompt user to enter number of Gadgets to order
                 Console.WriteLine();
-                Console.WriteLine("Place order for how many " + userGadgetSizeEntered + " Gadgets?");
-                Console.WriteLine();
-
-
+                Console.Write("Select NUMBER of " + userGadgetSizeEntered + " Gadgets to order: ");
+                
                 String Result = Console.ReadLine();
 
+                Console.WriteLine();
 
                 while (!Int32.TryParse(Result, out numUserGadgetsEntered))
                 {
-                    Console.WriteLine("Please enter a number.");
+                    Console.Write("Please enter a number: ");
 
                     Result = Console.ReadLine();
                 }
@@ -82,8 +81,8 @@ namespace Gadget
                 }
                 else if (numUserGadgetsEntered == 0)
                 {
-                    Console.WriteLine("Are you sure you meant to order 0?");
-                    Console.WriteLine("(Y) Yes   (N) No");
+                    Console.WriteLine("Are you sure you meant to order 0? ");
+                    Console.WriteLine("(Y) Yes      (Any other key) No ");
 
                     string confirm0 = Console.ReadLine().ToUpper();
 
@@ -136,8 +135,8 @@ namespace Gadget
 
             void RetailOrderForm()
             {
-                    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Make this dynamically grab the numbers
-
+                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Make this dynamically grab the numbers
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("=============================================================================");
                 Console.WriteLine("========================= WAG Gadget Order Form =============================");
                 Console.WriteLine("===========================  RETAIL MAIN MENU ===============================");

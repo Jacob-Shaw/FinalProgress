@@ -11,7 +11,6 @@ namespace Final
     public class ProductPricing
     {
         Dictionary<object, decimal> ItemPrices = new Dictionary<object, decimal>();
-
         
         public ProductPricing( object key )
         {
@@ -20,17 +19,10 @@ namespace Final
             ItemPrices.Add("Spring", ComponentPricing.LeverCostPerUnit);
 
             
-
             if ( ItemPrices.TryGetValue(key, out WagCustomerTypeAndOrder.RunningTotal) == true)
             {
                 WagCustomerTypeAndOrder.AddToRunningTotal(ItemPrices[key]);
             }
-            
         }
-
-
-        //Could do a decorator here to if needed.
-
-
     }
 }

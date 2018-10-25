@@ -11,8 +11,7 @@ namespace Decorator
     {
         protected IWagProduct tempOrder;
 
-
-
+        
         public GadgetOrderDecorator(IWagProduct newOrder)
         {
             tempOrder = newOrder;
@@ -27,8 +26,5 @@ namespace Decorator
         {
             get { return tempOrder.GetLineItemPrice; }
         }
-
-
-        
     }
 }

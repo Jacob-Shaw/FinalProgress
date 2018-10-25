@@ -23,14 +23,15 @@ namespace Gadget
         public string UserPowerSourceLarge()
         {
             Console.WriteLine();
-            Console.WriteLine("Please select power source for Large Gadget(s):  (G)enerator or (S)olar");
-            Console.WriteLine();
+            Console.Write("Please select (G)ENERATOR or (S)OLAR power source for your Large Gadget(s): ");
+            
 
             string userPowerSourceString = Console.ReadLine().ToUpper();
 
             while ((userPowerSourceString != "G") && (userPowerSourceString != "S"))
             {
-                Console.WriteLine("You must choose (G) or (S)");
+                Console.WriteLine();
+                Console.Write("You must choose (G) or (S) :");
                 userPowerSourceString = Console.ReadLine().ToUpper();
             }
 
@@ -44,15 +45,15 @@ namespace Gadget
 
             if (powerSource == "G")
             {
-                this.PowerSource = "Generator";
+                this.PowerSource = "GENERATOR";
             }
             else if (powerSource == "S")
             {
-                this.PowerSource = "Solar";
+                this.PowerSource = "SOLAR";
             }
             else
             {
-                this.PowerSource = "Unknown";
+                this.PowerSource = "UNKNOWN";
             }
         }
     }

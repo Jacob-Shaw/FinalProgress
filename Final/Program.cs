@@ -97,7 +97,39 @@ namespace FINAL
             //// 3. Present the products for something to add to cart
             WagProductCatalog ProductMenu = new WagProductCatalog();
 
-            
+
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Fun!!!!!!!   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+            /*
+
+            async void Blink()
+            {
+                bool BlinkOn = true;
+                while (BlinkOn == true)
+                {
+
+                    Console.CursorLeft = 0;
+                    await Task.Delay(100);
+                    Console.BackgroundColor = Console.BackgroundColor == ConsoleColor.Red ? ConsoleColor.Black : ConsoleColor.Red;
+                }
+            }
+
+            Blink();
+
+            BlinkOn = false;
+            Console.BackgroundColor = ConsoleColor.Black;
+
+
+            */
+
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
             /////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
             ///                             Unused code below!
@@ -108,7 +140,7 @@ namespace FINAL
 
 
 
-            
+
 
 
 

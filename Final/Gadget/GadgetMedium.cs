@@ -25,15 +25,14 @@ namespace Gadget
         public string UserPowerSourceMedium()
         {
             Console.WriteLine();
-            Console.WriteLine("Please select a power source for Medium Gadget(s):  (B)attery or (S)olar");
-            Console.WriteLine();
-
-            
+            Console.Write("Please select a (B)ATTERY or (S)OLAR power source for your Medium Gadget(s):  ");
+                        
             string userPowerSourceString = Console.ReadLine().ToUpper();
 
             while ((userPowerSourceString != "B") && (userPowerSourceString != "S"))
             {
-                Console.WriteLine("You must choose (B) or (S)");
+                Console.WriteLine();
+                Console.Write("You must choose (B) or (S) : ");
                 userPowerSourceString = Console.ReadLine().ToUpper();
             }
 
@@ -48,15 +47,15 @@ namespace Gadget
             
                 if (powerSource == "B")
                 {
-                    this.PowerSource = "Battery";
+                    this.PowerSource = "BATTERY";
                 }
                 else if (powerSource == "S")
                 {
-                    this.PowerSource = "Solar";
+                    this.PowerSource = "SOLAR";
                 }
                 else
                 {
-                    this.PowerSource = "Unknown";
+                    this.PowerSource = "UNKNOWN";
                 }
         }
     }

@@ -26,8 +26,17 @@ namespace WAG
         { 
             // Ask the user to specify the order type, Retail or Manufacturer.
             Console.WriteLine();
-            Console.WriteLine("Please select order type:  (R)etail or (M)anufacturer");
+            Console.WriteLine("PLEASE SELECT ORDER TYPE:  (R)ETAIL or (M)ANUFACTURER: _");
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("     *Note customization of certain products may");
+            Console.WriteLine("         only be available to Manufacturers.");
+            Console.CursorTop = 4;
+            Console.CursorLeft = 55;
 
 
             // Change the respone to a capital letter and compare to available types 
@@ -52,15 +61,6 @@ namespace WAG
         {
             RunningTotal += price;
         }
-
-
-        /*
-        public static WagCustomerTypeAndOrder()
-        {
-            CustomerType = GetOrderType();
-        }
-
-        */
     }
 }
 
