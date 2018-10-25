@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WAG;
 using Widget;
-using FINAL;
+using Final;
 
 namespace Gadget
 {

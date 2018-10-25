@@ -6,7 +6,7 @@ using Final;
 
 
 
-namespace FINAL
+namespace Final
 {
     class Program
     {
@@ -14,11 +14,51 @@ namespace FINAL
         {
             Console.WindowLeft = 0;
             Console.WindowTop = 0;
-            //Console.SetWindowPosition(10, 10);
+
+
+
+
+
+
+
+
+            /*
+            ManufacturerCustumization yoGadget = new ManufacturerCustumization();
+            yoGadget.CustomizeGadget(GadgetToCustomize);
+
+
+
+
+
+            
+
+
+
+
+            /*
+            Console.Beep(1050, 400);
+            Console.Beep(1200, 600);
+            Console.Beep(900, 400);
+            Console.Beep(350, 600);
+            Console.Beep(700, 2000);
+
+
+
+
+
+            /*
+            Console.Beep(800,500);
+            Console.Beep(900,500);//
+            Console.Beep(700, 500);
+            Console.Beep(300, 500);
+            Console.Beep(550, 2000);
+            */
+
             Console.SetWindowSize(80, 50);
+            
 
 
-            ProductPricing yyy = new ProductPricing("Gear");
+            //////////////////ProductPricing yyy = new ProductPricing("Gear");
 
 
 

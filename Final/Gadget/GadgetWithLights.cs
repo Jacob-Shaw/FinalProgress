@@ -1,4 +1,4 @@
-﻿using FINAL;
+﻿using Final;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +8,17 @@ using Widget;
 
 namespace Gadget
 {
-    public abstract class GadgetWithLights : GadgetAbstract
+    public abstract class GadgetWithLights : GadgetAbstract, IWagProductDecorator
     {
         public abstract int NumberOfLargeWidgets { get; set; }
         public abstract int NumberOfLights { get; set; }
+
+
+        //For Decorator
+        public decimal GetLineItemPrice { get { return GetPrice(); } }
+        public string GetLineItemOrderDetails { get { return (" +1 " + this.Name); } }
+
+
 
         // Using "new" with virtual to override GadgetAbstract definition and allow for classes
         //      that extend this one to override

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WAG;
-using FINAL;
+using Final;
 using Widget;
 
 namespace Gadget
@@ -15,7 +15,7 @@ namespace Gadget
     /// It can not be instantiated. No object can be directly created from it.
     /// </summary>
     
-    public abstract class GadgetAbstract : IGadget, IWagProduct
+    public abstract class GadgetAbstract : IGadget
     {
         //Making these abstract will force the developer to create the 
         //  inheriting classes with thought to it's construction
@@ -26,11 +26,7 @@ namespace Gadget
         public abstract int NumberOfSwitches { get; set; }  
         public abstract int NumberOfButtons { get; set; }
 
-        //For Decorator
-        public decimal GetLineItemPrice { get { return GetPrice(); } }
-        public string GetLineItemOrderDetails { get { return (" +1 " + this.Name); } }
-
-
+        
         //Methods
         public virtual void DisplayComponents()
         {

@@ -46,15 +46,15 @@
     <Compile Include="DisplayPricing.cs" />
     <Compile Include="GadgetOrderDecorator.cs" />
     <Compile Include="Gadget\GadgetAbstract.cs" />
-    <Compile Include="Gadget\GadgetCustomizable.cs" />
     <Compile Include="Gadget\GadgetLarge.cs" />
     <Compile Include="Gadget\GadgetMedium.cs" />
     <Compile Include="Gadget\GadgetSizeChoice.cs" />
     <Compile Include="Gadget\GadgetSmall.cs" />
     <Compile Include="Gadget\GadgetWithLights.cs" />
     <Compile Include="Gadget\IGadget.cs" />
+    <Compile Include="Gadget\ManufacturerCustumization.cs" />
     <Compile Include="ProductPricing.cs" />
-    <Compile Include="WAG\IWagProduct.cs" />
+    <Compile Include="WAG\IWagProductDecorator.cs" />
     <Compile Include="WAG\WagProductCatalog.cs" />
     <Compile Include="Widget\IWidget.cs" />
     <Compile Include="OrderCart.cs" />

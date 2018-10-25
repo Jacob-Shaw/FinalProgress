@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FINAL;
+using Final;
 
 namespace Decorator
 {
-    public abstract class GadgetOrderDecorator : IWagProduct
+    public abstract class GadgetOrderDecorator : IWagProductDecorator
     {
-        protected IWagProduct tempOrder;
+        protected IWagProductDecorator tempOrder;
 
         
-        public GadgetOrderDecorator(IWagProduct newOrder)
+        public GadgetOrderDecorator(IWagProductDecorator newOrder)
         {
             tempOrder = newOrder;
         }

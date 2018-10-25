@@ -106,9 +106,8 @@ namespace Gadget
                 //     information formatted nicely and ask the user if they agree to add this to
                 //     the MasterOrderForm)
 
-                CompleteGadgetOrderForm gadgetOrderSummary = new CompleteGadgetOrderForm();
-
-
+                GadgetOrderFormSubmission gadgetOrderSummary = new GadgetOrderFormSubmission();
+                
                 switch (userGadgetSizeEntered)
                 {
                     case "Small":
@@ -130,17 +129,19 @@ namespace Gadget
                         break;
                 }
             }
-
-
-
+            
             void RetailOrderForm()
             {
-                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Make this dynamically grab the numbers
+                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Make this and below dynamically grab the numbers   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("=============================================================================");
-                Console.WriteLine("========================= WAG Gadget Order Form =============================");
-                Console.WriteLine("===========================  RETAIL MAIN MENU ===============================");
-                Console.WriteLine("=============================================================================");
+                Console.WriteLine("================================================================================");
+                Console.WriteLine("========================= " +
+                    "WAG Gadget Order Form" +
+                    " ================================");
+                Console.WriteLine("===========================  " +
+                    "RETAIL MAIN MENU" +
+                    " ==================================");
+                Console.WriteLine("================================================================================");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("                Widgets    Switches    Buttons    Lights     Power Supply");
@@ -159,36 +160,37 @@ namespace Gadget
 
             void ManufacturerOrderForm()
             {
-                Console.WriteLine("=============================================================================");
-                Console.WriteLine("============================= WAG Order Form ================================");
-                Console.WriteLine("========================  MANUFACTURER MAIN MENU ============================");
-                Console.WriteLine("=============================================================================");
-
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("================================================================================");
+                Console.Write("============================= ");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write("WAG ORDER FORM");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(" ===================================");
+                Console.Write("========================");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write("  MANUFACTURER MAIN MENU");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(" ===============================");
+                Console.WriteLine("================================================================================");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine();
-                Console.WriteLine("................Jacob's stuff....................");
+                Console.WriteLine("                Widgets    Switches    Buttons    Lights     Power Supply");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine();
+                Console.WriteLine("Small Gadget:      2          1          2          0          Battery");
+                Console.WriteLine();
+                Console.WriteLine("Medium Gadget:     5          1          3          3      Battery or Solar");
+                Console.WriteLine();
+                Console.WriteLine("Large Gadget:     12          2          3          4      Solar or Generator");
+                Console.WriteLine();
                 Console.WriteLine();
 
-
-                //#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    Copy above order form!
-                //                                   Add customization
-
-
-
-
-
-                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@delete this after adding Manufacturer option code   Does it exit automatically?
-                Environment.Exit(0);
-            }
-            /// end of manufactuer order form
+                
+            }/// end of manufactuer order form
             
-            
-
-        }
-
-        
-        ///end of gadget order form
+        }///end of gadget order form constructor
 
     }///end of class gadgets
 
-    ///end of namespace
-}
+}///end of namespace
