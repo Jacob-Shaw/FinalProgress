@@ -16,7 +16,7 @@ namespace Gadget
 
         public ArrayList OrderFromOrderForm = new ArrayList();
 
-        public void DisplayOrder(int gadgetsOrdered, string sizeSelected)
+        public void DisplayOrder(int NumberOfGadgets, string sizeSelected)
         {
             switch (sizeSelected)
             {
@@ -38,15 +38,17 @@ namespace Gadget
 
                     Console.WriteLine();
                     Console.WriteLine("-----------------------------------------------------");
-                    
+
+                    OrderSummary(mySmallGadget, NumberOfGadgets);
+
                     //Ask the user to confirm the order and then return to Main Menu
-                    AddItemToOrder(gadgetsOrdered, mySmallGadget);
+                    AddItemToOrder(mySmallGadget, NumberOfGadgets);
                     
                     break;
                     
                 case "Medium":
 
-                    GadgetMedium myMediumGadget = new GadgetMedium();
+                    GadgetMedium myMediumGadget = new GadgetMedium(); 
 
                     Console.Clear();
 
@@ -58,12 +60,13 @@ namespace Gadget
 
                     Console.WriteLine();
                     Console.WriteLine("-----------------------------------------------------");
-                    
-                    CustomizeOrder(myMediumGadget);
-                    AddItemToOrder(gadgetsOrdered, myMediumGadget);////////////if customizing will be different
 
-                    break;
-                    
+                    OrderSummary(myMediumGadget, NumberOfGadgets);
+
+                    CustomizeOrder(myMediumGadget, NumberOfGadgets);
+                   
+                    break; 
+                     
                 case "Large":
                     
                     GadgetLarge myLargeGadget = new GadgetLarge();
@@ -78,14 +81,17 @@ namespace Gadget
 
                     Console.WriteLine();
                     Console.WriteLine("-----------------------------------------------------");
-                    
-                    AddItemToOrder(gadgetsOrdered, myLargeGadget);////////////if customizing will be different
+
+                    OrderSummary(myLargeGadget, NumberOfGadgets);
+
+                    CustomizeOrder(myLargeGadget, NumberOfGadgets);
+                  //  AddItemToOrder(myLargeGadget, gadgetsOrdered);////////////if customizing will be different
                     
                     break;
             }
         }
-        
-        void AddItemToOrder(int gadgetsOrdered, GadgetAbstract AddingGadget)
+
+        void OrderSummary(GadgetSmall AddingGadget, int gadgetsOrdered)
         {
             Console.WriteLine();
             Console.WriteLine("Number of " + AddingGadget.Name + " Gadgets ordering = " + gadgetsOrdered);
@@ -96,8 +102,26 @@ namespace Gadget
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine();
+        }
+
+        void OrderSummary(IWagProduct AddingGadget, int gadgetsOrdered)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Number of " + AddingGadget.GetLineItemOrderDetails + " Gadgets ordering = " + gadgetsOrdered);
+            Console.WriteLine();
+            Console.Write("Total Price of this item order:");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("      $" + gadgetsOrdered * AddingGadget.GetLineItemPrice);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.WriteLine();
+        }
 
 
+
+
+        void AddItemToOrder(IWagProduct AddingGadget, int gadgetsOrdered)
+        {
             //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Like the color choice below for other forms ?????????????????????
             
             Console.WriteLine("Add this item to your order?");
@@ -115,35 +139,99 @@ namespace Gadget
             
             if (userConfirmOrder == "Y")
             {
+
+                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                //                                              This is how the product will look when displayed
+                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetLineItemPrice);
+                OrderFromOrderForm.Add(gadgetsOrdered);
+                OrderFromOrderForm.Add(AddingGadget.GetLineItemOrderDetails);
+                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetLineItemPrice);  //added this a second time so it would display. the first one does not get displayed.
+
+
+
+
+                WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
+
+                /////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                //  this and maybe elsewhere is where you should also take the time and add to dictionarys defore the 
+                //          orderfromorderform gets emptied. do both dictionaries at the same time.
+
+
+
+
+
+            }
+            else if (gadgetsOrdered == 1138)
+            {
+                IGottaBadFeelingAboutThis HanSolo = new IGottaBadFeelingAboutThis();
+            }
+        }
+        
+        void AddItemToOrder(GadgetSmall AddingGadget, int gadgetsOrdered)
+        {
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Like the color choice below for other forms ?????????????????????
+
+
+            
+
+
+            Console.WriteLine("Add this item to your order?");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("(Y) Yes ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("-or- Press any other key to ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Cancel");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(", and then press \"Enter\": ");
+
+            string userConfirmOrder = Console.ReadLine().ToUpper();
+
+            if (userConfirmOrder == "Y")
+            {
                 OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetPrice());
                 OrderFromOrderForm.Add(gadgetsOrdered);
                 OrderFromOrderForm.Add(AddingGadget.Name);
 
                 WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
             }
-            else if (gadgetsOrdered == 1138)
-            {
-                IGottaBadFeelingAboutThis HanSolo = new IGottaBadFeelingAboutThis();
-            }
-
-
-
-
+            
         }
 
-        void CustomizeOrder(IWagProductDecorator GadgetToCustomize)
+
+
+
+        /// <summary>
+        /// //###############################    just put back!!!!
+        /// </summary>
+        /// <param name="GadgetToCustomize"></param>
+        /// <param name="NumofGadgets"></param>
+        void CustomizeOrder(IWagProduct GadgetToCustomize, int NumofGadgets)
         {
             Console.WriteLine();
             Console.WriteLine("Customization is available for this order.");
             Console.WriteLine();
-            Console.WriteLine("Would you like to customize this order?");
+            Console.WriteLine("Would you like to ADD customization to this order?");
             Console.Write("(Y) YES -or- PRESS ANY OTHER KEY TO CANCEL, AND THEN PRESS \"ENTER\": ");
-            string customizationAnswer = Console.ReadLine();
+            string customizationAnswer = Console.ReadLine().ToUpper();
 
-            if(customizationAnswer == "Y")
+
+            if (customizationAnswer == "Y")
             {
-                ManufacturerCustumization Customize = new ManufacturerCustumization();
-                Customize.CustomizeGadget(GadgetToCustomize);
+                ManufacturerCustomization Customize = new ManufacturerCustomization();
+                AddItemToOrder( Customize.CustomizeGadget(GadgetToCustomize, NumofGadgets), NumofGadgets);
+
+
+
+
+
+
+                //AddItemToOrder(GadgetToCustomize, NumofGadgets);
+            }
+            else
+            {
+                AddItemToOrder(GadgetToCustomize, NumofGadgets);
             }
         }
 

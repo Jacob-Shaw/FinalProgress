@@ -14,7 +14,7 @@ namespace Final
         {
             Console.WindowLeft = 0;
             Console.WindowTop = 0;
-
+            string FancyFinish = "Unfinished";
 
 
 

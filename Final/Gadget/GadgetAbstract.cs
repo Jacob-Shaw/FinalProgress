@@ -19,6 +19,7 @@ namespace Gadget
     {
         //Making these abstract will force the developer to create the 
         //  inheriting classes with thought to it's construction
+        public string Finish = "Unfinished";
         public abstract string Name { get; }
         public abstract string PowerSource { get; set; }
         public abstract int NumberOfSmallWidgets { get; set; }

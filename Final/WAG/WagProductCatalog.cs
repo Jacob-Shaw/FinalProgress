@@ -351,10 +351,12 @@ namespace WAG
                     
 ///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-                case "P":
-                                        // Code to Proceed to Checkout
+                case "C":
+                    // Code to Proceed to Checkout
 
+                    OrderCheckout myorderCheckout = new OrderCheckout();
 
+                    
 
 
 
@@ -415,7 +417,8 @@ namespace WAG
                
             int counter = 1;
             
-
+            ////////////////////////  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ ///////////////////// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            ///                                                     This is also where you might print prices in different spots!
             // Print everything in the order form
             foreach (Object entry in WagCustomerTypeAndOrder.MasterOrderForm)
             {
@@ -435,13 +438,13 @@ namespace WAG
                     foreach (Object listItem in ArrayInMasterList )
                     {
                         
-                        if (x > 0)
+                        if (x > 0)  //if it is not looking at the first ellement of the array (a decimal)
                         {
                             Console.Write(listItem + " ");
                         }
                         else
-                        {
-                            // Add price to running total
+                        {   // so enter the first element of the array to the running total
+                            // Add price to running total@@@@@@@@@@@@@@@@@@@@@@  ########################### @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
                             decimal price = decimal.Parse(listItem.ToString());
 

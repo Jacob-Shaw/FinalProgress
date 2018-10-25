@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Final
+namespace WAG
 {
-    public interface IWagProductDecorator
+    public interface IWagProduct
     {
         string GetLineItemOrderDetails { get; }
 

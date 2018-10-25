@@ -13,6 +13,7 @@ namespace Gadget
     {
         private const string _retailOrder = "R";
         private const string _manufacturerOrder = "M";
+        public string MyFinish = "Unfinished";
         
       
         public GadgetOrderForm()
@@ -23,7 +24,23 @@ namespace Gadget
             // 2. Select the appropriate order form R or M 
             // 2b. Present the correct order form
             selectOrderForm();     //********************************************Needed Info  R or M  
-            
+
+            selectFinish();
+
+            void selectFinish() {
+
+               Console.WriteLine("Please Select Finish: (U)nfinshed, (F)inshed, (P)lated");
+
+                string Result = Console.ReadLine();
+                if (Result == "F")
+                    MyFinish = "Finished";
+                if (Result == "P")
+                    MyFinish = "Plated";
+
+
+            };
+
+
             // 3. Select the gadget size s,m,l
             GadgetSizeChoice myGadgetSize = new GadgetSizeChoice(); 
             string userGadgetSizeEntered = myGadgetSize.ChooseGadgetSize();   //*********Needed Info   //i now have a gadget size! (((  Add to OrderForm Array -- 1.)))
@@ -34,7 +51,11 @@ namespace Gadget
 
             // 5. Create a gadget (For medium and large power choice is in constructor. If retail, just add finish with decorator. If Manufacturer allow to use decorator to add Finish, number of appropriate stuff. ---Depends on S, M, or L Gadget
             CreateGadgetSelection(userGadgetSizeEntered);    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                                                                                                         //                         1           2                          3                                 4                  5                6                         7
+                               
+            
+
+            
+            //                         1           2                          3                                 4                  5                6                         7
             // 6. Show what the customer has chosen to buy for this line item to be entered into MasterOrderForm array with price. Example :   Unfinished     Large      GADGET WITH     Solar       POWER SOURCE        +2 switches         +3 buttons       +5 lights      = $       10000.50
 
             // 7. Ask customer to approve adding to MasterOrderForm

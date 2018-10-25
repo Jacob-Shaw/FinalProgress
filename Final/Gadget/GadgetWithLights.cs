@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WAG;
 using Widget;
 
 namespace Gadget
 {
-    public abstract class GadgetWithLights : GadgetAbstract, IWagProductDecorator
+    public abstract class GadgetWithLights : GadgetAbstract, IWagProduct
     {
         public abstract int NumberOfLargeWidgets { get; set; }
         public abstract int NumberOfLights { get; set; }
@@ -16,7 +17,7 @@ namespace Gadget
 
         //For Decorator
         public decimal GetLineItemPrice { get { return GetPrice(); } }
-        public string GetLineItemOrderDetails { get { return (" +1 " + this.Name); } }
+        public string GetLineItemOrderDetails { get { return (" " + this.Name + " "); } }
 
 
 

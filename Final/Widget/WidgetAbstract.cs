@@ -1,4 +1,4 @@
-﻿using FINAL;
+﻿using Final;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +11,7 @@ namespace Widget
     /// It can include fields, properties and methods.
     /// It can not be instantiated. No object can be directly created from it.
     /// </summary>
-    public abstract class WidgetAbstract : IWidget, IWagProductDecorator
+    public abstract class WidgetAbstract : IWidget, IWagProduct
     {
         /// By making these Auto-Implemented properties abstract we are helping to
         /// to tell the developer to set the values when creating a new Widget.
