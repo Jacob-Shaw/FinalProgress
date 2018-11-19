@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Final;
 using WAG;
 
@@ -10,32 +6,26 @@ namespace Gadget
 {
     public class GadgetDecorators
     {
-
         public class Switches : WagProductDecorator
         {
             public int NumOfSwitches { get; set; }
-
-
+            
             string _name = (" Switch(es)");
 
             public Switches(IWagProduct newOrder) : base(newOrder)
             {
-
-                Console.Write("How many switches would you like to add to each gadget?");
+                Console.Write("How many Switches would you like to add to each gadget?");
 
                 string Result = Console.ReadLine();
                 
                 Console.WriteLine();
-
-
-
-
-                int numOfSwitches = 0;
-
                 
-
+                int numOfSwitches = 0;
+                
                 getSwitches();
+
                 this.NumOfSwitches = numOfSwitches;
+
                 void getSwitches()
                 {
                     while (!Int32.TryParse(Result, out numOfSwitches))
@@ -59,14 +49,13 @@ namespace Gadget
                         if (confirm0 == "Y")
                         {
                             //Should drop at this point and go to Main Menu
-
                         }
                         else
                         {
                             getSwitches();
                         }
                     }
-                    else //good number entered
+                    else //A good selection was made.
                     {
                         _name = (numOfSwitches + _name);
                     }
@@ -85,7 +74,6 @@ namespace Gadget
 
         public class Buttons : WagProductDecorator
         {
-            int numOfButtons;
             string _name = " Button(s)";
 
             public int NumOfButtons { get; set; }
@@ -98,19 +86,13 @@ namespace Gadget
                 string Result = Console.ReadLine();
                 
                 Console.WriteLine();
-
-
-
-                int numOfButtons = 0;
-
                 
-
+                int numOfButtons = 0;
+                
                 getButtons();
                 this.NumOfButtons = numOfButtons;
                 void getButtons()
                 {
-
-
                     while (!Int32.TryParse(Result, out numOfButtons))
                     {
                         Console.Write("Please enter a number: ");
@@ -145,7 +127,6 @@ namespace Gadget
                     }
                 }
 
-
                 Console.WriteLine("Buttons Added");
             }
 
@@ -165,24 +146,19 @@ namespace Gadget
 
             public Lights(IWagProduct newOrder) : base(newOrder)
             {
-                Console.Write("How many lights would you like to add to each gadget?");
+                Console.Write("How many Lights would you like to add to each gadget?");
 
                 string Result = Console.ReadLine();
                 
                 Console.WriteLine();
-
-
-                int numOfButtons = 0;
-
                 
-
+                int numOfButtons = 0;
+                
                 getLights();
 
                 this.NumOfLights = numOfButtons;
                 void getLights()
                 {
-
-
                     while (!Int32.TryParse(Result, out numOfLights))
                     {
                         Console.Write("Please enter a number: ");
@@ -216,13 +192,11 @@ namespace Gadget
                         _name = (numOfLights + _name);
                     }
                 }
-
-
-                Console.WriteLine("Light Added");
+                
+                Console.WriteLine("Lights Added");
             }
-
             public override string GetLineItemOrderDetails {
-                get { return tempOrder.GetLineItemOrderDetails + " " + this._name + " "; } }
+                get { return tempOrder.GetLineItemOrderDetails + this._name + " "; } }
             
             public override decimal GetLineItemPrice {
                 get { return tempOrder.GetLineItemPrice + (NumOfLights * ComponentPricing.LightCostPerUnit); } }

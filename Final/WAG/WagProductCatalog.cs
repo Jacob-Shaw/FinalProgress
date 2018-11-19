@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gadget;
 using Final;
 
 namespace WAG
@@ -14,10 +10,6 @@ namespace WAG
         // List of company products
         string[] WagProductsList = new string[] { "Gadget", "Gear", "Spring", "Lever"  };
         
-
-        // Used for calculating customer total from MasterOrderForm
-        decimal _runningTotal;
-
         // Method for displaying the title
         public void displayCatalogTitle()
         {
@@ -50,14 +42,11 @@ namespace WAG
         }
         
         /// Method for asking and getting the user choice from the products menu
-        public void getUserChoice()
+        public void getUserCatalogChoice()
         {
-            
-            
             string userChoice = ""; 
             
             int check = 0;
-
             
             // Get new input from the customer if the user entry is not a number
             while (!Int32.TryParse(userChoice, out check))
@@ -66,7 +55,6 @@ namespace WAG
                 Console.Write("PLEASE SELECT A LINE ITEM NUMBER: ");
                 userChoice = Console.ReadLine();
             }
-
             
             // Less than 0? Let's see if Absolute Value will solve the problem,
             if (check < 0)
@@ -100,14 +88,9 @@ namespace WAG
 
                         //This will create the new instance
                         object newType = Activator.CreateInstance(ItemWeAreTryingToCreate);
-
-
-                        ///Now it is special order form time!
-                        ///In the constructor for the special order forms:
-                        ///Display the info, collect choices, add to masterorderform
-                        ///do retail first
+                        
                         ///
-                        /// Program returns to this point after ordering or not ordering Gadgets!!!!!
+                        /// Program returns to this point after ordering or not ordering Gadgets!
                         /// 
 
                     }
@@ -142,7 +125,7 @@ namespace WAG
                     Console.WriteLine();
 
                     // Ask the user to try adding a product again.
-                    getUserChoice();
+                    getUserCatalogChoice();
                 }
             }
 
@@ -159,13 +142,13 @@ namespace WAG
                 Console.WriteLine("THE SELECTION YOU MADE DOES NOT EXIST. PLEASE TRY AGAIN");
                 Console.WriteLine();
 
-                getUserChoice();
+                getUserCatalogChoice();
             }
             
             //  A valid selection was made!
             else
             {
-                ///Take customer to order form if one exists, otherwise add product directly to MasterOrderForm.
+                //Take customer to order form if one exists, otherwise add product directly to MasterOrderForm.
                 
                 try
                 {
@@ -189,8 +172,7 @@ namespace WAG
                     if (ItemWeAreTryingToCreate == null) throw new InvalidOperationException("Valid type not found.");
 
                     object newType = Activator.CreateInstance(ItemWeAreTryingToCreate);
-
-                    ///Now it is special order form time!
+                    
                     ///In the constructor for the special order forms:
                     ///Display the info, collect choices, add to masterorderform
                     ///do retail first
@@ -209,9 +191,28 @@ namespace WAG
                     //   because it has no special order form.
                     
                     string checkThisItem3 = WagProductsList.ElementAt(check - 1);
-                    
-                    WagCustomerTypeAndOrder.MasterOrderForm.Add(checkThisItem3);
 
+                    string priceToDisplay = "";
+
+                    string itemToAdd = "";
+
+                    if (checkThisItem3 == "Gear")
+                    {
+                        priceToDisplay = ComponentPricing.GearCostPerUnit.ToString();
+                    }  
+                    if (checkThisItem3 == "Spring")
+                    {
+                        priceToDisplay = ComponentPricing.SpringCostPerUnit.ToString();
+                    }   
+                    if (checkThisItem3 == "Lever")
+                    {
+                        priceToDisplay = ComponentPricing.LeverCostPerUnit.ToString();
+                    }
+
+                    itemToAdd = "1  " + checkThisItem3 + " " + priceToDisplay;
+
+                    WagCustomerTypeAndOrder.MasterOrderForm.Add(itemToAdd);
+                    
 
                     displayOrderFormTitle();
                     printItAll();
@@ -260,7 +261,7 @@ namespace WAG
 
                     presentProducts();
 
-                    getUserChoice();
+                    getUserCatalogChoice();
 
                     break;
 
@@ -349,17 +350,11 @@ namespace WAG
                     
                     break;
                     
-///@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
                 case "C":
-                    // Code to Proceed to Checkout
+                                        // Code to Proceed to Checkout
 
                     OrderCheckout myorderCheckout = new OrderCheckout();
-
                     
-
-
-
                     break;
                     
                 case "X":
@@ -390,14 +385,8 @@ namespace WAG
                     break;
             }
         }
-
-
-
-
         
-
-
-        // Method to print all of the items in the Master customer order formto the console
+        // Method to print all of the items in the Master customer order form to the console
         void printItAll()
         {
             Console.Clear();
@@ -416,9 +405,7 @@ namespace WAG
             }
                
             int counter = 1;
-            
-            ////////////////////////  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ ///////////////////// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            ///                                                     This is also where you might print prices in different spots!
+      
             // Print everything in the order form
             foreach (Object entry in WagCustomerTypeAndOrder.MasterOrderForm)
             {
@@ -429,9 +416,7 @@ namespace WAG
                 if (ArrayInMasterList != null)
                 {
                     Console.Write(counter + ". ");
-
-
-
+                    
                     int x = 0;
 
                     // Print each item in the array that is in the current entry of the order form
@@ -443,40 +428,25 @@ namespace WAG
                             Console.Write(listItem + " ");
                         }
                         else
-                        {   // so enter the first element of the array to the running total
-                            // Add price to running total@@@@@@@@@@@@@@@@@@@@@@  ########################### @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+                        {   
                             decimal price = decimal.Parse(listItem.ToString());
 
                             WagCustomerTypeAndOrder.AddToRunningTotal(price);
 
                             x++;
                         }
-                            
                     }
 
                     Console.WriteLine();
-
-
-
-
-
-
-
+                    
                 }
                 else
                 {
                     // Print out single string entrys in the order form
                     Console.WriteLine(counter + ". " + entry);
                     
-
-
-
                     //Looks up the price and adds to RunningTotal
                     ProductPricing getPrice = new ProductPricing(entry);
-                    
-
-
                 }
 
                 counter++;
@@ -486,13 +456,10 @@ namespace WAG
             Console.WriteLine();
         }
         
-        /// Show the company MainMenu
+        // Show the company MainMenu
         public WagProductCatalog()
         {
             PresentSelectionMenu();
         }
-
-        
-
     }
 }

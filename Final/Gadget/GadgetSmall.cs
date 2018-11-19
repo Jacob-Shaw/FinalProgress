@@ -16,6 +16,5 @@ namespace Gadget
         public override int NumberOfSwitches { get; set; } = 1;
         public override int NumberOfButtons { get; set; } = 2;
         public override string PowerSource { get; set; } = "Battery";
-        
     }
 }

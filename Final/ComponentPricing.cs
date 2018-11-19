@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Final
 {
     public static class ComponentPricing
     {
-        
-
-
         // This class holds the componenet prices for building Widgets and Gadgets
-        //Widget Components
-
-
+       
         // Components
         public static decimal SwitchCostPerUnit { get; set; } = .19m;
         public static decimal ButtonCostPerUnit { get; set; } = .20m;
@@ -22,8 +15,9 @@ namespace Final
         public static decimal LeverCostPerUnit { get; set; } = .40m;
         public static decimal LightCostPerUnit { get; set; } = .26m;
         public static decimal SolarCostPerUnit { get; set; } = 12.21m;
-        public static decimal GeneratorCostPerUnit { get; set; } = 51.51m;///adjust price here
+        public static decimal GeneratorCostPerUnit { get; set; } = 51.51m;
 
+        
         public static decimal GetPowerSourcePrice(string powerSource)
         {
             switch (powerSource.ToUpper())
@@ -44,6 +38,6 @@ namespace Final
 
                     return 0m;
             }
-        }
+        }   
     }
 }

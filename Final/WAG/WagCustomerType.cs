@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Gadget;
+using Final;
 
 
 namespace WAG
 {
     /// <summary>
-    /// This IS the customer order form                         
+    /// This class get's the customer type.                      
     /// </summary>
     
-    public static class WagCustomerTypeAndOrder
+    public static class WagCustomerType
     {
         public static string CustomerType = "";
 
-        public static ArrayList MasterOrderForm = new ArrayList();
+        //public ArrayList OrderFromOrderForm = new ArrayList();
 
-        public static ArrayList OrderFromOrderForm = new ArrayList();
-
-        public static decimal RunningTotal;
+        //public static decimal AmountInQuestion;
         
-        public static void GetOrderType()
+
+       
+        
+        public static void GetCustomerType()
         { 
             // Ask the user to specify the order type, Retail or Manufacturer.
             Console.WriteLine();
@@ -29,13 +35,20 @@ namespace WAG
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
+
+
+            //SpecialEffects specialEffects = new SpecialEffects();
+            //specialEffects.Blink("     *Note customization of certain products may \n");
+            //specialEffects.Blink("         only be available to Manufacturers.");
             Console.WriteLine("     *Note customization of certain products may");
             Console.WriteLine("         only be available to Manufacturers.");
+
+            Console.CursorLeft = 0;
             Console.CursorTop = 4;
             Console.CursorLeft = 55;
 
 
-            // Change the respone to a capital letter and compare to available types 
+            // Change the response of R or M to a capital letter and compare to available types 
             string userOrderTypeString = Console.ReadLine().ToUpper();
 
             // Ask the user to reenter the order type if the user made an invalid choice
@@ -49,13 +62,6 @@ namespace WAG
             Console.Clear();
 
             CustomerType = userOrderTypeString;
-
-            //return userOrderTypeString;
-        }
-
-        public static void AddToRunningTotal(decimal price)
-        {
-            RunningTotal += price;
         }
     }
 }

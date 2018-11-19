@@ -6,9 +6,7 @@ namespace Gadget
 {
     public class GadgetSizeChoice
     {
-        /// <summary>
-        /// This class simply allows the user to choose the size of the gadget
-        /// </summary>
+        /// This class simply allows the user to choose the size of the gadget.
       
         public string ChooseGadgetSize()
         {

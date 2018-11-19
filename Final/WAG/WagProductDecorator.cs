@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Final;
 
 namespace WAG
 {
@@ -11,8 +6,7 @@ namespace WAG
     {
         //This is the type found here in the abstact class implementing the specic interface
         protected IWagProduct tempOrder;
-
-
+        
         public WagProductDecorator(IWagProduct newOrder)
         {
             tempOrder = newOrder;

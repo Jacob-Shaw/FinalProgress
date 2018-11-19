@@ -1,9 +1,5 @@
 ﻿using Final;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WAG;
 using Widget;
 
@@ -19,8 +15,7 @@ namespace Gadget
         public decimal GetLineItemPrice { get { return GetPrice(); } }
         public string GetLineItemOrderDetails { get { return (" " + this.Name + " "); } }
 
-
-
+        
         // Using "new" with virtual to override GadgetAbstract definition and allow for classes
         //      that extend this one to override
         public new virtual void DisplayComponents()
@@ -45,8 +40,7 @@ namespace Gadget
             Console.Write("# of Levers.." + SmallWidget.NumOfLevers + "\n");
             Console.WriteLine();
             Console.WriteLine();
-
-
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Medium Widgets: ");
             Console.CursorLeft = 30;
@@ -54,8 +48,7 @@ namespace Gadget
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine();
             Console.WriteLine("      Composed of:");
-
-
+            
             Console.CursorLeft = 4;
             Console.Write("# of Gears....." + MediumWidget.NumOfGears + "\n");
             Console.CursorLeft = 5;
@@ -64,8 +57,7 @@ namespace Gadget
             Console.Write("# of Levers.." + MediumWidget.NumOfLevers + "\n");
             Console.WriteLine();
             Console.WriteLine();
-
-
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Large Widgets: ");
             Console.CursorLeft = 30;
@@ -73,8 +65,7 @@ namespace Gadget
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine();
             Console.WriteLine("      Composed of:");
-
-
+            
             Console.CursorLeft = 4;
             Console.Write("# of Gears....." + LargeWidget.NumOfGears + "\n");
             Console.CursorLeft = 5;
@@ -84,7 +75,6 @@ namespace Gadget
             Console.WriteLine();
             Console.WriteLine();
             
-
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Switches: ");
             Console.CursorLeft = 30;

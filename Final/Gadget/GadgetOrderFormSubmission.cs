@@ -1,11 +1,6 @@
 ﻿using System;
-using Gadget;
-using Widget;
 using WAG;
 using System.Collections;
-using System.Threading.Tasks;
-using System.Threading;
-using Final;
 
 namespace Gadget
 {
@@ -63,8 +58,10 @@ namespace Gadget
 
                     OrderSummary(myMediumGadget, NumberOfGadgets);
 
-                    CustomizeOrder(myMediumGadget, NumberOfGadgets);
-                   
+                    if (WagCustomerTypeAndOrder.CustomerType == "M")
+                        CustomizeOrder(myMediumGadget, NumberOfGadgets);
+                    else
+                        AddItemToOrder(myMediumGadget, NumberOfGadgets);
                     break; 
                      
                 case "Large":
@@ -84,9 +81,10 @@ namespace Gadget
 
                     OrderSummary(myLargeGadget, NumberOfGadgets);
 
-                    CustomizeOrder(myLargeGadget, NumberOfGadgets);
-                  //  AddItemToOrder(myLargeGadget, gadgetsOrdered);////////////if customizing will be different
-                    
+                    if (WagCustomerTypeAndOrder.CustomerType == "M")
+                        CustomizeOrder(myLargeGadget, NumberOfGadgets);
+                    else
+                        AddItemToOrder(myLargeGadget, NumberOfGadgets);
                     break;
             }
         }
@@ -116,14 +114,9 @@ namespace Gadget
             Console.WriteLine();
             Console.WriteLine();
         }
-
-
-
-
+        
         void AddItemToOrder(IWagProduct AddingGadget, int gadgetsOrdered)
         {
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Like the color choice below for other forms ?????????????????????
-            
             Console.WriteLine("Add this item to your order?");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -139,27 +132,12 @@ namespace Gadget
             
             if (userConfirmOrder == "Y")
             {
-
-                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                //                                              This is how the product will look when displayed
                 OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetLineItemPrice);
                 OrderFromOrderForm.Add(gadgetsOrdered);
                 OrderFromOrderForm.Add(AddingGadget.GetLineItemOrderDetails);
-                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetLineItemPrice);  //added this a second time so it would display. the first one does not get displayed.
-
-
-
-
+                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetLineItemPrice);  
+                
                 WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
-
-                /////////////@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                //  this and maybe elsewhere is where you should also take the time and add to dictionarys defore the 
-                //          orderfromorderform gets emptied. do both dictionaries at the same time.
-
-
-
-
-
             }
             else if (gadgetsOrdered == 1138)
             {
@@ -169,12 +147,6 @@ namespace Gadget
         
         void AddItemToOrder(GadgetSmall AddingGadget, int gadgetsOrdered)
         {
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Like the color choice below for other forms ?????????????????????
-
-
-            
-
-
             Console.WriteLine("Add this item to your order?");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -192,21 +164,13 @@ namespace Gadget
             {
                 OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetPrice());
                 OrderFromOrderForm.Add(gadgetsOrdered);
-                OrderFromOrderForm.Add(AddingGadget.Name);
+                OrderFromOrderForm.Add(" " + AddingGadget.Name);
+                OrderFromOrderForm.Add(gadgetsOrdered * AddingGadget.GetPrice());
 
                 WagCustomerTypeAndOrder.MasterOrderForm.Add(OrderFromOrderForm);
             }
-            
         }
-
-
-
-
-        /// <summary>
-        /// //###############################    just put back!!!!
-        /// </summary>
-        /// <param name="GadgetToCustomize"></param>
-        /// <param name="NumofGadgets"></param>
+        
         void CustomizeOrder(IWagProduct GadgetToCustomize, int NumofGadgets)
         {
             Console.WriteLine();
@@ -215,28 +179,17 @@ namespace Gadget
             Console.WriteLine("Would you like to ADD customization to this order?");
             Console.Write("(Y) YES -or- PRESS ANY OTHER KEY TO CANCEL, AND THEN PRESS \"ENTER\": ");
             string customizationAnswer = Console.ReadLine().ToUpper();
-
-
-            if (customizationAnswer == "Y")
+            
+            if (customizationAnswer == "Y" && WagCustomerTypeAndOrder.CustomerType == "M")
             {
                 ManufacturerCustomization Customize = new ManufacturerCustomization();
                 AddItemToOrder( Customize.CustomizeGadget(GadgetToCustomize, NumofGadgets), NumofGadgets);
-
-
-
-
-
-
-                //AddItemToOrder(GadgetToCustomize, NumofGadgets);
             }
             else
             {
                 AddItemToOrder(GadgetToCustomize, NumofGadgets);
             }
         }
-
-
-
     }
 
 
@@ -1179,65 +1132,12 @@ namespace Gadget
 
 
 
+    
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     
 
     public class IGottaBadFeelingAboutThis

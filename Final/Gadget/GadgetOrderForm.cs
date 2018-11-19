@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using WAG;
 
 namespace Gadget
 {
-    /// <summary>
-    /// This order form has two order forms
-    /// </summary>
+    // This order form has two order forms.
    
     public class GadgetOrderForm
     {
@@ -23,46 +19,19 @@ namespace Gadget
 
             // 2. Select the appropriate order form R or M 
             // 2b. Present the correct order form
-            selectOrderForm();     //********************************************Needed Info  R or M  
-
-            selectFinish();
-
-            void selectFinish() {
-
-               Console.WriteLine("Please Select Finish: (U)nfinshed, (F)inshed, (P)lated");
-
-                string Result = Console.ReadLine();
-                if (Result == "F")
-                    MyFinish = "Finished";
-                if (Result == "P")
-                    MyFinish = "Plated";
-
-
-            };
-
-
+            selectOrderForm();     
+            
             // 3. Select the gadget size s,m,l
             GadgetSizeChoice myGadgetSize = new GadgetSizeChoice(); 
-            string userGadgetSizeEntered = myGadgetSize.ChooseGadgetSize();   //*********Needed Info   //i now have a gadget size! (((  Add to OrderForm Array -- 1.)))
+            string userGadgetSizeEntered = myGadgetSize.ChooseGadgetSize();  
 
             // 4. Select the number of gadgets to buy
-            int numUserGadgetsEntered; //*********************************Needed Info     //i now have a number of gadgets!
+            int numUserGadgetsEntered; 
             SelectNumberOfGadgets();
 
-            // 5. Create a gadget (For medium and large power choice is in constructor. If retail, just add finish with decorator. If Manufacturer allow to use decorator to add Finish, number of appropriate stuff. ---Depends on S, M, or L Gadget
-            CreateGadgetSelection(userGadgetSizeEntered);    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                               
+            // 5. Create a gadget 
+            CreateGadgetSelection(userGadgetSizeEntered);    
             
-
-            
-            //                         1           2                          3                                 4                  5                6                         7
-            // 6. Show what the customer has chosen to buy for this line item to be entered into MasterOrderForm array with price. Example :   Unfinished     Large      GADGET WITH     Solar       POWER SOURCE        +2 switches         +3 buttons       +5 lights      = $       10000.50
-
-            // 7. Ask customer to approve adding to MasterOrderForm
-
-            // 8. Return to MainMenu (This should happen automatically at end )
-            
-
             void selectOrderForm()
             {
                 if (WagCustomerTypeAndOrder.CustomerType == "R")
@@ -71,14 +40,12 @@ namespace Gadget
                     RetailOrderForm();
 
                 }
-                else if (WagCustomerTypeAndOrder.CustomerType == "M")///start of manufacturer order form
+                else if (WagCustomerTypeAndOrder.CustomerType == "M")
                 {
                     ManufacturerOrderForm();
                 }
             }
 
-            
-            
             void SelectNumberOfGadgets()
             {
                 //Prompt user to enter number of Gadgets to order
@@ -153,7 +120,6 @@ namespace Gadget
             
             void RetailOrderForm()
             {
-                //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Make this and below dynamically grab the numbers   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("================================================================================");
                 Console.WriteLine("========================= " +
@@ -206,12 +172,8 @@ namespace Gadget
                 Console.WriteLine("Large Gadget:     12          2          3          4      Solar or Generator");
                 Console.WriteLine();
                 Console.WriteLine();
-
                 
-            }/// end of manufactuer order form
-            
-        }///end of gadget order form constructor
-
-    }///end of class gadgets
-
-}///end of namespace
+            }
+        }
+    }
+}

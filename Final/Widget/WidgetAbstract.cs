@@ -1,7 +1,5 @@
 ﻿using Final;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using WAG;
 
 namespace Widget 
@@ -20,7 +18,6 @@ namespace Widget
         public abstract int NumOfLevers { get; set; }
         public abstract string Name { get; } 
             
-        
         //For Decorator
         public decimal GetLineItemPrice { get { return GetPrice(); } }
         public string GetLineItemOrderDetails { get { return  (" +1 " + this.Name ); } }
@@ -41,9 +38,5 @@ namespace Widget
                         (NumOfSprings * ComponentPricing.SpringCostPerUnit) +
                         (NumOfLevers * ComponentPricing.LeverCostPerUnit));
         }
-
-
-
-
     }
 }

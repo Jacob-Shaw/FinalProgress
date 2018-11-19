@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DisplayPricing.cs" />
     <Compile Include="GadgetOrderDecorator.cs" />
     <Compile Include="Gadget\GadgetAbstract.cs" />
     <Compile Include="Gadget\GadgetDecorators.cs" />
@@ -61,10 +60,8 @@
     <Compile Include="WAG\WagProductCatalog.cs" />
     <Compile Include="WAG\WagProductDecorator.cs" />
     <Compile Include="Widget\IWidget.cs" />
-    <Compile Include="OrderCart.cs" />
     <Compile Include="Gadget\GadgetOrderFormSubmission.cs" />
     <Compile Include="Gadget\GadgetOrderForm.cs" />
-    <Compile Include="Gadget\PowerSource.cs" />
     <Compile Include="ComponentPricing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

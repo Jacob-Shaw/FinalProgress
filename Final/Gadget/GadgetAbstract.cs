@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WAG;
 using Final;
 using Widget;
 
 namespace Gadget
 {
-    /// <summary>
-    /// This abstract class describes what a basic Gadget "is".
-    /// It can include fields, properties and methods.
-    /// It can not be instantiated. No object can be directly created from it.
-    /// </summary>
+    // This abstract class describes what a basic Gadget "is".
+    // It can include fields, properties and methods.
+    // It can not be instantiated. No object can be directly created from it.
     
     public abstract class GadgetAbstract : IGadget
     {
@@ -51,8 +44,7 @@ namespace Gadget
             Console.Write("# of Levers.." + SmallWidget.NumOfLevers + "\n");
             Console.WriteLine();
             Console.WriteLine();
-
-
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Medium Widgets: ");
             Console.CursorLeft = 30;
@@ -60,7 +52,6 @@ namespace Gadget
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine();
             Console.WriteLine("      Composed of:");
-
             
             Console.CursorLeft = 4;
             Console.Write("# of Gears....." + MediumWidget.NumOfGears + "\n");
@@ -70,8 +61,7 @@ namespace Gadget
             Console.Write("# of Levers.." + MediumWidget.NumOfLevers + "\n");
             Console.WriteLine();
             Console.WriteLine();
-
-
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Number of Switches: ");
             Console.CursorLeft = 30;
